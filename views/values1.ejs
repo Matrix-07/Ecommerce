@@ -1,0 +1,55 @@
+<html>
+<head>
+    <link href="assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style>
+
+
+
+    .card {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+ height:226px;
+  width: 175px;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+  padding:2px;
+  margin: 3px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+img {
+  border-radius: 5px 5px 0 0;
+ height:160px;
+}
+</style>
+<body class="bo1">
+
+<marquee behavior="alternate">Hello</marquee>
+  
+        <p>Retrieved values length are<%=data.length%> </p>
+
+        
+            <% for(var i=0; i<data.length; i++){%>
+                
+                
+                <a href="#"><div class="card">
+                    <img src="/assets/images/<%=data[i].imgpath%>" alt="image of jauger" style="width:100%"/>
+                    <div class="container">
+                    <p><%=data[i].title%> </p>
+                    <p><%=data[i].price%></p> 
+                    <p><%=data[i].category%></p>
+                    </div>
+                </div></a>
+                
+                
+            <%}%>
+            
+   
+    
+</body>
+</html>

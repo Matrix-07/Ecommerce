@@ -1,0 +1,44 @@
+.k{
+    position: relative;
+    color:red;
+    text-align:center;
+    top:100px;
+}
+
+
+.b1{
+   
+    color:black;
+   background-color: blueviolet;
+    
+}
+input{
+    border-color:black;
+}
+.modified{
+    position: relative;
+color:blue;
+height:550px;
+width:500px;
+border:2px solid rgb(252, 12, 12);
+padding: 5px;
+margin: 30%;
+bottom:300px;
+
+}
+
+.kj{
+    position: relative;
+    top:40px;
+    color:red;
+    text-align: center;
+}
+
+body{
+    
+ /*   background:url("/assets/jauger.jpg");*/
+    background-repeat: no-repeat;
+background-size: 80%;
+left:30px;
+
+}

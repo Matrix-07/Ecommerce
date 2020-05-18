@@ -1,0 +1,179 @@
+<html>
+
+<style>
+.card {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+ height:226px;
+  width: 175px;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+  padding:3px;
+  margin:5px;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+img {
+  border-radius: 5px 5px 0 0;
+ height:160px;
+}
+
+#kids{
+  display: none;
+
+  
+}
+#mens{
+  display:none;
+
+  
+}
+#women{
+  display:none;
+  
+}
+
+body{
+  background-color: aqua;
+}
+
+.fix{
+  position: absolute;
+  top:30px;
+ left:200px;
+
+}
+.ba{
+  padding:3px;
+}
+</style>
+<body>
+  
+
+<div id="test">
+
+  <a href="#" temp="women" onclick="down('women')">  WOMEN'S FASHION</a> </br></br>
+  <a href="#" temp="mens" onclick="down('mens')" >MEN'S FASHION</a> <br><br>
+  <a href="#" temp="kids" onclick="down('kids')">KID'S FASHION</a> <br><br>
+  <a href="#" temp="electronics" onclick="down('electronics')">ELECTRONICS</a> <br><br>
+  <a href="#" temp="mobile-computers"  onclick="down('mobile computers')">MOBILES COMPUTERS</a> <br><br>
+  <a href="#" temp="house utensils" onclick="down('house utensils')">HOUSEHOLD SUPPLIES</a> <br><br>
+  <a href="#" temp="books" onclick="down('books')">BOOKS</a> <br><br>
+  <a href="#" temp="movie-tickets" onclick="down('movie tickets')">MOVIE TICKETS</a> <br><br>
+  <a href="#" temp="recharge" onclick="down('recharge')">RECHARGE</a> <br><br>
+
+</div>
+   
+  
+<div class="fix" id="kids">
+
+  <% data_kids.forEach((test)=>{%>
+    <a  href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>"> 
+      <div class="card">
+  
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p> 
+        </div>
+      </div> 
+  
+    </a>
+  <%});%> </br>
+</div>
+          
+
+          <div class="fix" id="mens"> 
+        
+                <% data_men.forEach((test)=>{%>
+                  <a href="#"> 
+                    <div class="card">
+                
+                      <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test.description%> </p>
+                        <p>price :<%=test.price%></p> 
+                        </div>
+                    </div> 
+                  </a>
+                <%});%>
+            </div> <br><br><br><br><br><br><br><br>
+       
+          <div class="fix" id="women">
+                <% data_wome.forEach((test)=>{%>
+                  <a href="#"> 
+                    <div class="card">
+
+                      <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test.description%> </p>
+                        <p>price :<%=test.price%></p> 
+                        </div>
+                    </div> 
+               </a>
+                <%});%></br>
+            </div>
+  
+
+
+<script>
+  var b=document.getElementById("test").getElementsByTagName("a");
+  
+ 
+  var m=[];
+ for(var i=0;i<b.length;i++)
+ {
+m.push(b[i].getAttribute("temp"));
+ }
+
+ 
+function down(y)
+  {
+       for(var j=0;j<m.length;j++)
+       {
+         if(m[j]==y){
+        var x = document.getElementById(y).style;
+        
+                  
+        if (x.display == "none"  || x.display==='') 
+        {
+            x.display = "block";
+            b[j].style.color="red";
+            b[j].style.fontFamily="Arial";
+            b[j].style.fontWeight="bold";
+            b[j].style.fontSize="20";
+        } else
+         {
+            x.display = "none";
+            b[j].setAttribute("style","color:''; fontFamily:'';fontWeight:'',fontSize=''");
+            
+
+        }
+      }
+      else{
+        document.getElementById(m[j]).style.display="none";
+        b[j].setAttribute("style","color:''; fontFamily:'';fontWeight:'',fontSize=''");
+      }
+
+       }
+           
+                  
+        /*  else
+          {
+              for(var j=0;j[i]!=y && j<m.length;j++)
+              {
+                var modi=document.getElementById(m[j]).style;
+                modi.display="none";
+              }
+          }*/
+    }
+ </script>
+</body>
+
+
+
+</html>

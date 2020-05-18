@@ -1,0 +1,441 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+.bar{
+   position:relative;
+    background-color:black;
+    height:5px;
+    width:30px; 
+   margin:2px;
+   
+    
+}
+.button1{
+  height:52px;
+    width: 64px;
+    background-color: aqua;
+    margin:1px;
+   
+}
+
+.button1:hover{
+  transform:scale(1.1);
+}
+.button2{
+    position: absolute;;
+    top:180px;
+  height:35px;
+    width: 46px;
+    background-color: aqua;
+    margin:3px;
+}
+#k{
+    width:68px;
+    position: absolute;;
+    background-color:aliceblue;
+    border:2px solid black;
+    top:230px;
+    display:none;
+    height:490px;
+}
+.profile{
+        height:100px;
+        width:100px;
+        border:2px solid salmon;
+        border-radius: 50%;
+        background:url("/assets/jauger.jpg");
+       
+    }
+.total{
+background-color: aquamarine;
+height:2100px;
+/*background: url("/assets/sa.png");*/
+}
+
+.search{
+    
+  position: relative;
+ height: 40px;
+ width:550px;
+  left:200px;
+}
+.search1{
+  position: relative;
+  height: 40px;
+  width:80px;
+  left:670px;
+}
+
+.main-a{
+  position: relative;
+  display: flex;
+  width:1124px;
+height: 230px;
+  top:60px;
+  left:80px;
+ 
+  flex-wrap: wrap;
+  
+}
+
+
+.fad{
+  position: relative;
+  top:90px;
+text-align: center;
+}
+#time1{
+  position:absolute;
+  top:15px;
+  left:80%;
+}
+
+.card {
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+ height:226px;
+  width: 175px;
+  text-align: center;
+  border-radius: 5px;
+  display: inline-block;
+  padding:2px;
+  
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+img {
+  border-radius: 5px 5px 0 0;
+ height:160px;
+}
+    </style>
+
+<body>
+  
+        <div class="total">
+           <div class="profile">
+
+            </div>
+            <h1>Hi Shivu </h1>
+            <p  id="time1"><b style="font-size: 34px;">Time</b></p>
+            <form   method ="POST" action="/main">
+
+              <div class="search"> 
+                <input type="text" class="search" placeholder="Search.." name="search">
+                <button  class="search1" type="submit"><i class="fa fa-search  fa-2x"></i></button>
+            </div>
+              
+             </form>
+
+            <button onclick="dy()" class="button2">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button> <br><br>
+            
+            
+            
+            <div id="pd">
+                
+                    <h1 class="fad">Offers Today</h1></br></br>
+                    <div class="main-a">
+                      <a href="#">
+                        <div class="card">
+        
+                        <img src="/assets/images/<%=test[0].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[0].description%> </p>
+                          <p>price :<%=test[0].price%></p> 
+                          </div>
+                      </div> 
+                    </a>
+                      <a href="#"> <div class="card">
+        
+                        <img src="/assets/images/<%=test[1].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[1].description%> </p>
+                          <p>price :<%=test[1].price%></p> 
+                          </div>
+                      </div> </a>
+                     
+                      <a href="#">  <div class="card">
+        
+                        <img src="/assets/images/<%=test[2].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[2].description%> </p>
+                          <p>price :<%=test[2].price%></p> 
+                          </div>
+                      </div></a>
+                     
+                      <a href="#"><div class="card">
+        
+                        <img src="/assets/images/<%=test[3].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[3].description%> </p>
+                          <p>price :<%=test[3].price%></p> 
+                          </div>
+                      </div> </a>
+                      <a href="#"><div class="card">
+        
+                        <img src="/assets/images/<%=test[4].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[4].description%> </p>
+                          <p>price :<%=test[4].price%></p> 
+                          </div>
+                      </div></a>
+                       <a gref="#"><div class="card">
+        
+                        <img src="/assets/images/<%=test[5].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[5].description%> </p>
+                          <p>price :<%=test[5].price%></p> 
+                          </div>
+                      </div> 
+                    </div><br><br></a>
+                      
+                    <a href="#"> <h1 class="fad">Women's Wear</h1><br>
+                      <div  class="main-a">
+                        <div class="card">
+          
+                          <img src="/assets/images/<%=test[6].imgpath%>" style="width:100%">
+                          <div class="container">
+                            <p><%=test[6].description%> </p>
+                            <p>price :<%=test[6].price%></p> 
+                            </div>
+                        </div> </a>
+                   <a href="#"> <div class="card">
+        
+                    <img src="/assets/images/<%=test[7].imgpath%>" style="width:100%">
+                    <div class="container">
+                      <p><%=test[7].description%> </p>
+                      <p>price :<%=test[7].price%></p> 
+                      </div>
+                  </div> </a>
+                     <a href="#"><div class="card">
+        
+                      <img src="/assets/images/<%=test[8].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[8].description%> </p>
+                        <p>price :<%=test[8].price%></p> 
+                        </div>
+                    </div> </a>
+                      <a href="#">  <div class="card">
+        
+                        <img src="/assets/images/<%=test[9].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[9].description%> </p>
+                          <p>price :<%=test[9].price%></p> 
+                          </div>
+                      </div> </a>
+                    <a href="#"><div class="card">
+        
+                      <img src="/assets/images/<%=test[10].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[10].description%> </p>
+                        <p>price :<%=test[10].price%></p> 
+                        </div>
+                    </div></a>
+                       <a href="#"><div class="card">
+        
+                        <img src="/assets/images/<%=test[11].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[11].description%> </p>
+                          <p>price :<%=test[11].price%></p> 
+                          </div>
+                      </div> 
+                    </div><br><br></a>
+                      
+
+                    <h1 class="fad">Mens Wear</h1><br>
+                    <div class="main-a">
+                      <a href="#"> <div class="card">
+        
+                        <img src="/assets/images/<%=test[12].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[12].description%> </p>
+                          <p>price :<%=test[12].price%></p> 
+                          </div>
+                      </div> </a>
+                     <a href="#"><div class="card">
+        
+                      <img src="/assets/images/<%=test[13].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[13].description%> </p>
+                        <p>price :<%=test[13].price%></p> 
+                        </div>
+                    </div> </a>
+                    <a href="#"> <div class="card">
+        
+                      <img src="/assets/images/<%=test[14].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[14].description%> </p>
+                        <p>price :<%=test[14].price%></p> 
+                        </div>
+                    </div> </a>
+                      
+                     <a href="#"> <div class="card">
+        
+                      <img src="/assets/images/<%=test[15].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[15].description%> </p>
+                        <p>price :<%=test[15].price%></p> 
+                        </div>
+                    </div></a>
+                      <a href="#"><div class="card">
+        
+                        <img src="/assets/images/<%=test[16].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[16].description%> </p>
+                          <p>price :<%=test[16].price%></p> 
+                          </div>
+                      </div> </a>
+                      <a href="#">  <div class="card">
+        
+                        <img src="/assets/images/<%=test[17].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[17].description%> </p>
+                          <p>price :<%=test[17].price%></p> 
+                          </div>
+                      </div> 
+                    </div><br><br> </a>
+                      
+                        
+
+                     <h1 class="fad">Items Recommended for You</h1><br> 
+                    <div class="main-a">
+                      <a href="#"><div class="card">
+                       
+        
+                        <img src="/assets/images/<%=test[18].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[18].description%> </p>
+                          <p>price :<%=test[18].price%></p> 
+                          </div>
+                      </div> </a> 
+                      <a href="#">  <div class="card">
+        
+                        <img src="/assets/images/<%=test[19].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[19].description%> </p>
+                          <p>price :<%=test[19].price%></p> 
+                          </div>
+                      </div> </a>
+                      <a href="#"><div class="card">
+        
+                        <img src="/assets/images/<%=test[20].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[20].description%> </p>
+                          <p>price :<%=test[20].price%></p> 
+                          </div>
+                      </div></a>
+                     <a href="#"> <div class="card">
+        
+                      <img src="/assets/images/<%=test[21].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[21].description%> </p>
+                        <p>price :<%=test[21].price%></p> 
+                        </div>
+                    </div> </a>
+                       
+                    <a href="#"><div class="card">
+        
+                      <img src="/assets/images/<%=test[22].imgpath%>" style="width:100%">
+                      <div class="container">
+                        <p><%=test[22].description%> </p>
+                        <p>price :<%=test[22].price%></p> 
+                        </div>
+                    </div> </a>
+                     <a href="#"> 
+                      <div class="card">
+        
+                        <img src="/assets/images/<%=test[23].imgpath%>" style="width:100%">
+                        <div class="container">
+                          <p><%=test[23].description%> </p>
+                          <p>price :<%=test[23].price%></p> 
+                          </div>
+                      </div> 
+                    </div><br></a>
+                     
+            </div>
+            
+            <div id="k" class="a">
+                <a  href="main1"><button  class="button1">home</button> <br><br></a>  
+                <a  href="scat"> <button  class="button1">Shop by Category</button><br><br> </a>   
+                <a href="orders"> <button  class="button1">Your Orders</button> <br>  <br></a>  
+                <a href="cart"> <button  class="button1"> cart</button>   <br><br></a>
+                <a href="Wishlist"><button  class="button1"> wish list</button>  <br> <br></a> 
+                <a href="Settings"><button  class="button1">Settings</button>   <br> <br></a>
+                <a href="contact"><button  class="button1">contact</button>  <br>  <br></a>
+                        
+             </div>
+            
+             
+        </div>
+    
+</body>
+<script>
+           
+            var x=new Date();
+            var time1=document.getElementById('time1');
+            time1.innerHTML=x;
+
+                function dy() {
+            var x = document.getElementById("k").style;
+            var b=document.getElementById("pd");
+            
+            if (x.display == "none"  || x.display==='') {
+                x.display = "block";
+            } else {
+                x.display = "none";
+            }
+            
+            }
+            
+function adding1(f){
+  
+            var block_to_insert ;
+     var container_block ;
+
+   container_block = document.getElementsByClassName("main-a");
+   
+       for(var i=0;i<container_block.length;i++){
+          for(var j=0;j<6;j++)
+           {
+               block_to_insert = document.createElement( 'div' );
+               block_to_insert.innerHTML =  `<a href=''><div class="card">
+                           <img src="/assets/jauger.jpg" alt="Avatar" style="width:100%">
+                           <div class="container">
+                           <p>best one </p>
+                           <p>100</p> 
+                           </div>
+                       </div></a>`;
+               container_block[i].append( block_to_insert );
+           }
+           }
+          }
+        
+  
+        adding1(f);
+        var x=document.getElementById("dert").innerHTML;
+       
+              
+  </script>
+
+</html>
+
+<!-- function to disable button
+   function dis(){
+  const button = document.querySelector('button');
+  if( button.disabled == true){
+    alert("fr");
+  button.disabled = false;}
+  else{
+    alert("hey");
+    button.disabled = true;
+  }-->

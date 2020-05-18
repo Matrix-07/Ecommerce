@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link href="assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body class="bo1">
+
+<marquee behavior="alternate">Hello</marquee>
+    <!--<p>You Entered First Name as: <%=data1.Fname %></p>
+    <p>You Entered Last  Name as: <%=data1.Lname %></p>
+    <p>You Entered Email as :     <%=data1.email %> </p>
+    <p>You Entered About you:<%=data.textarea %></p>
+    <p>Your Birth date is:<%= data.birth%></p>
+    <p>Your Entered time :<%= data.time%></p>
+    <p>You Entered password:<%=data.pass %></p>
+
+    <br>
+    <br>
+    <br>-->
+    <p>Retrieved values are <br><%= data %></p>
+
+    <ul>
+        <% for(var i=0; i<data.length; i++){%>
+            <li><%= data[i].Fname%></li>
+        <%}%>
+        <ul>
+
+ 
+   
+    
+</body>
+</html>
