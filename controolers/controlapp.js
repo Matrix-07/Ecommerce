@@ -66,8 +66,8 @@ mydata.save().then(()=>
   /*app.post("/sert",urlencodedParser,function(req,res){
     console.log(req.body);
   });*/
-app.post("/main",urlencodedParser,function(req,res){
-  res.render("main");
+app.post("/search",urlencodedParser,function(req,res){
+  res.render("search",{data:req.body});
 });
     app.get("/main1",function(req,res){
       addprodmain.find({},function(err,data){
