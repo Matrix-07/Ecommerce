@@ -88,7 +88,7 @@ app.get("/", function(req, res) {
       
         app.post("/sert",urlencodedParser,function(req,res){
       console.log(req.body);
-      res.render("recv");
+      res.send("recv");
         });
 
 cont(app);

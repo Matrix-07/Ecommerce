@@ -1,96 +1,70 @@
 <html>
+
 <head>
   <link href="assets/style.css" rel="stylesheet" type="text/css" />
 </head>
-<style>
-    .incs{
-    height:30px;
-    width: 30px;
-    border:1px solid black;
-    border-radius:50%;
-  }
-  .decs{
-    height:30px;
-    width: 30px;
-    border:1px solid black;
-    border-radius:50%;
-  }
-  .input1{
-    height:30px;
-    width: 80px;
-    border:1px solid black;
-    text-align:center;
-  }
- 
-img {
-  border-radius: 5px 5px 0 0;
- height:160px;
-}
 
+<body style="color:aqua">
+  <p> Title: <%=test[0].title%></p>
+  <p> Desrciption: <%=test[0].description%> </p>
+  <p> Category:<%=test[0].category%></p>
 
-</style>
-<body>
-   <p> Title: <%=test[0].title%></p>
-  <p>  Desrciption: <%=test[0].description%> </p>
-   <p> Category:<%=test[0].category%></p>
- 
-       <div class="card">
-    
-          <img src="/assets/images/<%=test[0].imgpath%>" style="width:100%">
-          <div class="container">
-           
-            <p>price :<%=test[0].price%></p> 
-           
-          </div>
-        </div> 
+  <div class="card">
 
-      </br>
-      </br>
-      <b>QUANTITY:</b> <input class="input1" type="number" id="qtyin" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
-      <button onclick="qty('incs')" class="incs">+</button>&nbsp;&emsp;
-    
-      <button onclick="qty('decs')" class="decs">-</button></br><br></br>
-     <b> Total price:</b><p id="totalg" value="<%=test[0].price%>"> <%=test[0].price%></p></br>
-      
-     <form method="GET" action="/recievedsamp">  
-       <button id="subval" onclick="totalval()" type="submit" name="b" value="2"> 
+    <img src="/assets/images/<%=test[0].imgpath%>" style="width:100%">
+    <div class="container">
+
+      <p>price :<%=test[0].price%></p>
+
+    </div>
+  </div>
+
+  </br>
+  </br>
+  <b>QUANTITY:</b> <input class="quantity-input" type="" id="qtyin" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
+  <button onclick="qty('Increase-Quantity')" class="Increase-Button">+</button>&nbsp;&emsp;
+
+  <button onclick="qty('Decrease-Quantiy')" class="Decrease-Button">-</button></br><br></br>
+  <b> Total price:</b>
+  <p id="totalvalue" value="<%=test[0].price%>"> <%=test[0].price%></p></br>
+
+  <form method="GET" action="/recievedsamp">
+    <button id="subval" onclick="totalval()" type="submit" name="b" value="2">
       Checkout
     </button></form>
-  
-      <script>
-        function qty(a)
-        {
-      
-      var b=document.getElementById("qtyin");
-      if(b.value<0  ){
-      b.value=0;
+
+  <script>
+    function qty(a) {
+
+      var b = document.getElementById("qtyin");
+      if (b.value < 0) {
+        b.value = 0;
       }
-      else{
-      if(a=="incs"){
-        b.value=(parseInt(b.value)+1);
+      else {
+        if (a == "Increase-Quantity") {
+          b.value = (parseInt(b.value) + 1);
+        }
+        else {
+          if (b.value >= 1)
+            b.value = (parseInt(b.value) - 1);
+        }
       }
-      else{
-        if(b.value>=1)
-        b.value=(parseInt(b.value)-1);
-      }
-      }
-      
-      var x=document.getElementById("totalg");
-     var y=x.getAttribute("value");
-      x.innerHTML=y*b.value;
-  
-      
-      }
-     function totalval(){
-      var b=document.getElementById("qtyin");
-      var x=document.getElementById("totalg");
-     var y=x.getAttribute("value");
-  document.getElementById("subval").value=y*b.value;
-      }
-      </script>
-       
-    
-      
+
+      var x = document.getElementById("totalvalue");
+      var y = x.getAttribute("value");
+      x.innerHTML = y * b.value;
+
+
+    }
+    function totalval() {
+      var b = document.getElementById("qtyin");
+      var x = document.getElementById("totalvalue");
+      var y = x.getAttribute("value");
+      document.getElementById("subval").value = y * b.value;
+    }
+  </script>
+
+
 
 
 </body>

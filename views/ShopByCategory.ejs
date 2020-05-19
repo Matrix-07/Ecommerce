@@ -1,0 +1,130 @@
+<html>
+
+<head>
+  <link href="assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+  <div id="CategoryList">
+
+
+    <a href="#" category-type="women" onclick="ShowItemsByCategory('women')"> WOMEN'S FASHION</a> </br></br>
+    <a href="#" category-type="mens" onclick="ShowItemsByCategory('mens')">MEN'S FASHION</a> <br><br>
+    <a href="#" category-type="kids" onclick="ShowItemsByCategory('kids')">KID'S FASHION</a> <br><br>
+    <a href="#" category-type="electronics" onclick="ShowItemsByCategory('electronics')">ELECTRONICS</a> <br><br>
+    <a href="#" category-type="mobile-computers" onclick="ShowItemsByCategory('mobile computers')">MOBILES COMPUTERS</a>
+    <br><br>
+    <a href="#" category-type="house utensils" onclick="ShowItemsByCategory('house utensils')">HOUSEHOLD SUPPLIES</a>
+    <br><br>
+    <a href="#" category-type="books" onclick="ShowItemsByCategory('books')">BOOKS</a> <br><br>
+    <a href="#" category-type="movie-tickets" onclick="ShowItemsByCategory('movie tickets')">MOVIE TICKETS</a> <br><br>
+    <a href="#" category-type="recharge" onclick="ShowItemsByCategory('recharge')">RECHARGE</a> <br><br>
+
+  </div>
+
+
+  <div class="ShowItems" id="kids">
+
+    <% data_kids.forEach((test)=>{%>
+    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+
+    </a>
+    <%});%> </br>
+  </div>
+
+
+  <div class="ShowItems" id="mens">
+
+    <% data_men.forEach((test)=>{%>
+    <a href="#">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+    </a>
+    <%});%>
+  </div> <br><br><br><br><br><br><br><br>
+
+  <div class="ShowItems" id="women">
+    <% data_wome.forEach((test)=>{%>
+    <a href="#">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+    </a>
+    <%});%></br>
+  </div>
+
+
+
+  <script>
+    var AllAttributesofTag = document.getElementById("CategoryList").getElementsByTagName("a");
+
+
+    var ArrayOfCategoryType = [];
+    for (var i = 0; i < AllAttributesofTag.length; i++) {
+      ArrayOfCategoryType.push(AllAttributesofTag[i].getAttribute("category-type"));
+    }
+
+
+    function ShowItemsByCategory(MatchCategory) {
+      for (var j = 0; j < ArrayOfCategoryType.length; j++) {
+        if (ArrayOfCategoryType[j] == MatchCategory) {
+          var CheckCategoryVisibility = document.getElementById(MatchCategory).style;
+
+
+          if (CheckCategoryVisibility.display == "none" || CheckCategoryVisibility.display === '') {
+            CheckCategoryVisibility.display = "block";
+            AllAttributesofTag[j].style.color = "red";
+            AllAttributesofTag[j].style.fontFamily = "Arial";
+            AllAttributesofTag[j].style.fontWeight = "bold";
+            AllAttributesofTag[j].style.fontSize = "20";
+          } else {
+            CheckCategoryVisibility.display = "none";
+            AllAttributesofTag[j].setAttribute("style", "color:''; fontFamily:'';fontWeight:'',fontSize=''");
+
+
+          }
+        }
+        else {
+          document.getElementById(ArrayOfCategoryType[j]).style.display = "none";
+          AllAttributesofTag[j].setAttribute("style", "color:''; fontFamily:'';fontWeight:'',fontSize=''");
+        }
+
+      }
+
+
+      /*  else
+        {
+            for(var j=0;j[i]!=y && j<m.length;j++)
+            {
+              var modi=document.getElementById(m[j]).style;
+              modi.display="none";
+            }
+        }*/
+    }
+  </script>
+</body>
+
+
+
+</html>

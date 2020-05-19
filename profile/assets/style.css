@@ -1,184 +1,180 @@
-.k{
-    position: relative;
-    color:red;
-    text-align:center;
-    top:100px;
+.Menu {
+  position: relative;
+  color: red;
+  text-align: center;
+  top: 100px;
 }
-
-
-.b1{
-   
-    color:black;
-   background-color: blueviolet;
-    
+.signup-button {
+  color: black;
+  background-color: blueviolet;
 }
-input{
-    border-color:black;
+input {
+  border-color: black;
 }
-.modified{
-    position: relative;
-color:blue;
-height:550px;
-width:500px;
-border:2px solid rgb(252, 12, 12);
-padding: 5px;
-margin: 30%;
-bottom:300px;
-
+.modified {
+  position: relative;
+  color: blue;
+  height: 550px;
+  width: 500px;
+  border: 2px solid rgb(252, 12, 12);
+  padding: 5px;
+  margin: 30%;
+  bottom: 300px;
 }
-
-.kj{
-    position: relative;
-    top:40px;
-    color:red;
-    text-align: center;
+.Login-Details{
+  position: relative;
+  top: 40px;
+  color: red;
+  text-align: center;
 }
-
-body{
-    
- /*   background:url("/assets/jauger.jpg");*/
-    background-repeat: no-repeat;
-background-size: 80%;
-left:30px;
-
+.signup-Details{
+  background-color: aqua;
 }
-
-
+body {
+  /*   background:url("/assets/jauger.jpg");*/
+  background-repeat: no-repeat;
+  background-size: 80%;
+  left: 30px;
+}
 .card {
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
-   height:226px;
-    width: 175px;
-    text-align: center;
-    color:aqua;
-    border-radius: 5px;
-    display: inline-block;
-    padding:2px;
-    margin: 3px;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    transform: scale(1.1);
-  }
-  img {
-    border-radius: 5px 5px 0 0;
-   height:160px;
-  }
-  .bar{
-    position:relative;
-     background-color:black;
-     height:5px;
-     width:30px; 
-    margin:2px;
-    
-     
- }
- .button1{
-   height:52px;
-     width: 64px;
-     background-color: aqua;
-     margin:1px;
-    
- }
- 
- .button1:hover{
-   transform:scale(1.1);
- }
- .button2{
-     position: absolute;;
-     top:180px;
-   height:35px;
-     width: 46px;
-     background-color: aqua;
-     margin:3px;
- }
- #k{
-     width:68px;
-     position: absolute;;
-     background-color:aliceblue;
-     border:2px solid black;
-     top:230px;
-     display:none;
-     height:490px;
- }
- .profile{
-         height:100px;
-         width:100px;
-         border:2px solid salmon;
-         border-radius: 50%;
-         background:url("/assets/jauger.jpg");
-        
-     }
- .total{
- background-color: #2A293E;
- height:2100px;
- /*background: url("/assets/sa.png");*/
- }
- 
- .search{
-     
-   position: relative;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 226px;
+  width: 175px;
+  text-align: center;
+  color: aqua;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 2px;
+  margin: 3px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+img {
+  border-radius: 5px 5px 0 0;
+  height: 160px;
+}
+.SingleBarInMenu {
+  position: relative;
+  background-color: black;
+  height: 5px;
+  width: 30px;
+  margin: 2px;
+}
+.button1 {
+  height: 52px;
+  width: 64px;
+  background-color: aqua;
+  margin: 1px;
+}
+
+.button1:hover {
+  transform: scale(1.1);
+}
+
+.button2 {
+  position: absolute;
+  top: 180px;
+  height: 35px;
+  width: 46px;
+  background-color: aqua;
+  margin: 3px;
+}
+
+#MenuBar {
+  width: 68px;
+  position: absolute;
+  background-color: aliceblue;
+  border: 2px solid black;
+  top: 230px;
+  display: none;
+  height: 490px;
+}
+.profile {
+  height: 100px;
+  width: 100px;
+  border: 2px solid salmon;
+  border-radius: 50%;
+  background: url("/assets/jauger.jpg");
+}
+
+.main-body {
+  background-color: #2a293e;
+  height: 2100px;
+  /*background: url("/assets/sa.png");*/
+}
+
+.searchItems{
+  position: relative;
   height: 40px;
-  width:550px;
-   left:200px;
- }
- .search1{
-   position: relative;
-   height: 40px;
-   width:80px;
-   left:670px;
- }
- 
- .main-a{
-   position: relative;
-   display: flex;
-   width:1124px;
- height: 230px;
-   top:60px;
-   left:80px;
+  width: 550px;
+  left: 200px;
+}
+.Home-search-button {
+  position: relative;
+  height: 40px;
+  width: 80px;
+  left: 670px;
+}
+
+.FlexForCard {
+  position: relative;
+  display: flex;
+  width: 1124px;
+  height: 230px;
+  top: 60px;
+  left: 80px;
+
+  flex-wrap: wrap;
+}
+
+.OfferHeadLine {
+  position: relative;
+  top: 90px;
+  text-align: center;
+  color: aqua;
+}
+#time1 {
+  position: absolute;
+  top: 15px;
+  left: 80%;
+}
+
+#kids {
+  display: none;
+}
+#mens {
+  display: none;
+}
+#women {
+  display: none;
+}
+
+body {
+  background-color: #2a293e;
+}
+
+.ShowItems{
+  position: absolute;
+  top: 30px;
+  left: 300px;
   
-   flex-wrap: wrap;
-   
- }
- 
- 
- .fad{
-   position: relative;
-   top:90px;
- text-align: center;
- color:aqua;
- }
- #time1{
-   position:absolute;
-   top:15px;
-   left:80%;
- }
- 
-#kids{
-    display: none;
-  
-    
-  }
-  #mens{
-    display:none;
-  
-    
-  }
-  #women{
-    display:none;
-    
-  }
-  
-  body{
-    background-color: #2A293E;
-  }
-  
-  .fix{
-    position: absolute;
-    top:30px;
-   left:200px;
-  
-  }
-  .ba{
-    padding:3px;
-  }
+}
+.ba {
+  padding: 3px;
+}
+.Increase-Button,.Decrease-Button{
+  height:30px;
+  width: 30px;
+  border:1px solid black;
+  border-radius:50%;
+}
+
+.quantity-input{
+  height:30px;
+  width: 80px;
+  border:1px solid black;
+  text-align:center;
+}
+

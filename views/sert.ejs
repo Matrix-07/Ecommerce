@@ -6,17 +6,27 @@
 
 </head>
 
-<body class="bo1">
+<body class="signup-Details">
 
-    <h1 class="kj">Register Your Details </h1>
+    <h1 >Register Your Details </h1>
 
-    <form class="modified" method="POST" action="/sert">
+    <form class="modified" method="POST" action="/profile">
+
+        
         
     
-<b>First Name : &emsp;<input  type="text" name="Fname" value="" placeholder="shiv" required></br></br>
-<b>Last Name</b>  : &emsp;<input type="text" name="Lname" value="" placeholder="dhoni"></br></br>
-<button class="b1" name="submit" value="login"  type="submit">Login</button></br></br>
-<button class="b1" name="submit" value="signup"  type="submit">signup</button></br></br>
+<b>First Name :&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" name="Fname" value="" placeholder="shiv" required></br></br>
+<b>Last Name</b>:&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;<input type="text" name="Lname" value="" placeholder="dhoni" required></br></br>
+<b>Email</b>    :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  <input name="email" value="" type="email" placeholder="xyz@gmail.com" required></br></br>
+<b>Birth Date:</b>:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="date" placeholder="birthday" name="birthdate" value="" required></br></br>
+<b>Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" id="firstpassword" name="pass" value="" required></br></br>
+<b>Confirm Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" id="confirmpassword" name="confirmpass" value="" required></br></br>
+<b>Country:</b>:&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="Country" name="country" value="" required></br></br>
+<b>State:</b>:&nbsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="State" name="state" value="" required></br></br>
+<b>Mobile Number:</b>:&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;<input type="tel" placeholder="Mobilenumber" name="mobilenumber" value="" required></br></br>
+<button onclick="checkpass()"  class="signup-button" name="Firstuser" value="signedup"  type="submit">Submit</button></br></br>
+
+
 
 </form>
 
@@ -25,7 +35,7 @@
 
 </html>
 
-<!--<b>Email</b>    :&emsp;&emsp;&emsp;  <input name="email" value="" type="email" placeholder="xyz@gmail.com" required></br></br>
+<!--
 <b>About You</b>:&emsp;&emsp;<textarea name="textarea" value="" placeholder="Ex: My Name is Shivaraj Iam 23." rows="10" cols="40"></textarea></br></br>
 <b>Birth Date:</b>:&emsp;&emsp;<input type="date" placeholder="bday" name="birth" value=""></br></br>
 <b>Time:</b>:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="time" placeholder="time" name="time" value=""></br></br>

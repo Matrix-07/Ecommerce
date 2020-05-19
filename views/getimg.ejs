@@ -4,10 +4,7 @@
 </head>
 <style>
 
-img {
-  border-radius: 5px 5px 0 0;
- 
-}
+
 </style>
 
 <body>
@@ -15,13 +12,13 @@ img {
    
     
     <a href="#"><div class="card">
-        <img src="/assets/images/<%=s.imgpath%>" alt="image of jauger"/>
+        <img src="/assets/images/<%=data.img%>" alt="image of jauger"/>
         <div class="container">
-        <p><%=s.title%> </p>
-        <p><%=s.price%></p> 
+        <p><%=data.title%> </p>
+        <p><%=data.price%></p> 
         </div>
     </div></a>
-    <p><%=s.description%></p>
+    <p><%=data.description%></p>
 
 </body>
 </html>

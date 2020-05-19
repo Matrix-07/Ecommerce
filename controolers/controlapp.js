@@ -8,7 +8,7 @@ var x=function(app)
 {
 
   app.post("/orders",urlencodedParser,function(req,res){
-res.render("orders");
+res.render("orders",{data:req.body});
   });
 
   app.get("/recievedsamp",function(req,res){
@@ -16,7 +16,7 @@ console.log(req.query);
 res.render("recievedsamp",{data:req.query})
   });
   
-  app.get("/scat",function(req,res){
+  app.get("/ShopByCategory",function(req,res){
 
     addprodmain.find({category:"men"},function(err,data1){
       var mydata1=data1;
@@ -29,7 +29,7 @@ res.render("recievedsamp",{data:req.query})
     addprodmain.find({category:"wome"},function(err,data3){
       var mydata3=data3;
       console.log(mydata3);
-      res.render("scat",{"data_men":mydata1,"data_kids":mydata2,"data_wome":mydata3});
+      res.render("ShopByCategory",{"data_men":mydata1,"data_kids":mydata2,"data_wome":mydata3});
     });
   });
 });
@@ -53,6 +53,7 @@ mydata.save().then(()=>
     });
     res.render("getimg",{s:req.body});
   });
+
 
   app.get("/retimg",function(req,res){
     res.render("retimg");
@@ -80,7 +81,21 @@ app.post("/search",urlencodedParser,function(req,res){
     });
 app.get("/logger",function(req,res){
     
-    res.render("logger",{qs:req.query});
+    res.render("logger");
+});
+app.post("/logger",urlencodedParser,function(req,res){
+var data=req.body;
+console.log(data);
+if(data.submittype=="login"){
+res.send("login success");
+}
+else{
+res.render("sert");
+}
+});
+
+app.post("/profile",urlencodedParser,function(req,res){
+res.render("profile",{data:req.body})
 });
 
   
@@ -98,14 +113,7 @@ res.send("successfully cleared");
 });
   });
   
-    app.get("/retdata",function(req,res)
-    {
-      addprodmain.find({},function(err,data){
-        console.log(data);
-        res.render("values1",{data});
-    
-      });
-    });
+   
       /*
       var db=client.db("mynewdb");
       db.listCollections().toArray(function(err, collInfos) {
@@ -140,10 +148,7 @@ res.send("successfully cleared");
       });*/
       
       
-      app.get("/process_get",function(req,res){
-      console.log(req.query);
-      res.render("values",{qs:req.query});
-      });
+     
       
       app.get("/delete",function(req,res){
      

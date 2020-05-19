@@ -4,12 +4,12 @@
         <link href="assets/style.css" rel="stylesheet" type="text/css" />
     </head>
 
-    <body>
+    <body style="background-color: aqua;">
         <form method="POST" action="orders">
 
-            <h>total pice is:<%=data.b%></h></br>
+            <h1 name="price" value="<%=data.b%>">Total Price Is:<%=data.b%></h1></br>
             Delivery Address:
-            </br><textarea></textarea></br><br>
+            </br><textarea name="DeliveryAddress" value="" rows="10"></textarea></br><br>
             &emsp;&emsp;<button>confirm</button>
 
         </form>
