@@ -177,4 +177,12 @@ body {
   border:1px solid black;
   text-align:center;
 }
+.input-border{
+border:2px solid black;
+border-right: 0px;
 
+}
+.country-border{
+  border:2px solid black;
+  border-left:0px;
+}

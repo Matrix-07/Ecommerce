@@ -10,34 +10,47 @@
 
     <h1 >Register Your Details </h1>
 
-    <form class="modified" method="POST" action="/profile">
+    <form class="modified" method="POST" action="/profile" onsubmit="return checkpass()">
 
         
         
     
-<b>First Name :&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" name="Fname" value="" placeholder="shiv" required></br></br>
-<b>Last Name</b>:&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;<input type="text" name="Lname" value="" placeholder="dhoni" required></br></br>
+<b>First Name :&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" name="Fname" value="a" placeholder="shiv" required></br></br>
+<b>Last Name</b>:&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;<input type="text" name="Lname" value="a" placeholder="dhoni" required></br></br>
 <b>Email</b>    :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  <input name="email" value="" type="email" placeholder="xyz@gmail.com" required></br></br>
-<b>Birth Date:</b>:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="date" placeholder="birthday" name="birthdate" value="" required></br></br>
+<b>Birth Date:</b>:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="date" placeholder="birthday" name="birthdate" value="08-01-2020" required></br></br>
 <b>Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" id="firstpassword" name="pass" value="" required></br></br>
-<b>Confirm Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" id="confirmpassword" name="confirmpass" value="" required></br></br>
-<b>Country:</b>:&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="Country" name="country" value="" required></br></br>
-<b>State:</b>:&nbsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="State" name="state" value="" required></br></br>
-<b>Mobile Number:</b>:&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;<input type="tel" placeholder="Mobilenumber" name="mobilenumber" value="" required></br></br>
-<button onclick="checkpass()"  class="signup-button" name="Firstuser" value="signedup"  type="submit">Submit</button></br></br>
+<b>Confirm Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" id="confirmpassword" name="confirmpass" value="as" required></br></br>
+<b>Country:</b>:&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input class="input-border" type="text" placeholder="Country" name="Country" value="India" required><select onclick="checkcountry()" name="countries" id="country-selection" class="country-border"  size="1">
+    <option value="country">India</option>
+    <option name="country">USA</option>
+    <option name="country">Germany</option>
+    <option name="country">Italy</option>
+    <option name="country">spain</option>
+    <option name="country">nepal</option>
+</select>
+
+
+<p></p>
+<b>State:</b>:&nbsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" placeholder="State" name="state" value="d" required></br></br>
+<b>Mobile Number:</b>:&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;<input type="tel" placeholder="Mobilenumber" name="mobilenumber" value="856" required></br></br>
+<button  class="signup-button" name="Firstuser" value="signedup"  type="submit">Submit</button></br></br>
 
 
 
 </form>
+<script>
+    function checkcountry(){
+        var d=document.getElementById("country-selection");
+        var f=document.getElementsByName("country");
+        var e=d.options[d.selectedIndex].text;
+        f[0].value=e;
 
+       
+    }
+</script>
 
 </body>
 
 </html>
 
-<!--
-<b>About You</b>:&emsp;&emsp;<textarea name="textarea" value="" placeholder="Ex: My Name is Shivaraj Iam 23." rows="10" cols="40"></textarea></br></br>
-<b>Birth Date:</b>:&emsp;&emsp;<input type="date" placeholder="bday" name="birth" value=""></br></br>
-<b>Time:</b>:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="time" placeholder="time" name="time" value=""></br></br>
-<b>Password</b>:&emsp;&emsp;<input type="password" placeholder="password" name="pass" value="" required></br></br>
-&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;-->

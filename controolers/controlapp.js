@@ -86,15 +86,34 @@ app.get("/logger",function(req,res){
 app.post("/logger",urlencodedParser,function(req,res){
 var data=req.body;
 console.log(data);
-if(data.submittype=="login"){
-res.send("login success");
+if(data.submittype=="login")
+{
+ 
+  user.find({email:data.email},function(err,doc){
+    if(doc.length){
+      res.send("exis");
+    }
+    else{
+      res.send("no")
+    }
+
+    
+  })
+
 }
 else{
-res.render("sert");
+  res.render("sert");
 }
 });
 
 app.post("/profile",urlencodedParser,function(req,res){
+  var mydata=new user(req.body);
+  mydata.save().then(()=>{
+
+  })
+  .catch(err=>{
+    res.status(400).send("cannot be saved");
+  })
 res.render("profile",{data:req.body})
 });
 
