@@ -7,19 +7,44 @@
 .signup-button {
   color: black;
   background-color: blueviolet;
+  height:45px;
+  width:100px;
+  
+}
+label{
+  margin:20px;
+  font-size: 45px;
 }
 input {
   border-color: black;
 }
+.date-width{
+  height:30px;
+  width:260px;
+  text-align: center;
+  color:black;
+  font-size: 20px;
+}
+.insertdata{
+  text-align: center;
+  color:black;
+  font-size: 20px;
+  height:30px;
+}
+
 .modified {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   color: blue;
   height: 550px;
-  width: 500px;
-  border: 2px solid rgb(252, 12, 12);
+  width: 1200px;
+  
   padding: 5px;
   margin: 30%;
   bottom: 300px;
+  font-size:x-large;
 }
 .Login-Details{
   position: relative;
@@ -89,7 +114,7 @@ img {
   border: 2px solid black;
   top: 230px;
   display: none;
-  height: 490px;
+  height: 550px;
 }
 .profile {
   height: 100px;
@@ -185,4 +210,7 @@ border-right: 0px;
 .country-border{
   border:2px solid black;
   border-left:0px;
+}
+b{
+  font-size:35px;
 }
