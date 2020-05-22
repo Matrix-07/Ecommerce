@@ -10,9 +10,10 @@ var bodyparser = require("body-parser");
 var urlencodedParser = bodyparser.urlencoded({ extended: true });
 var initiatemongo=require("../mynewapp/config/db");
 
-/*var session=require("express-session");*/
+var session=require("express-session");
 
-//install admin bro to add admin panel
+
+//install admin bro to add admin panyel
 // initiate connection
 initiatemongo();
 //restful API thru which data i added
@@ -22,74 +23,57 @@ app.set("view engine","ejs");
 
 app.use("/admin",admin);
 app.use(express.static( __dirname+ "/profile"));
+
+app.set('trust proxy', 1);
+ var k=   app.use(session({
+      secret: 'keyboard cat'
+      
+    }));
 app.get("/", function(req, res) {
-  res.sendFile(__dirname+"/index.html");
+  
+  
+    res.render("logger");
+  
+  
 });
 
-/*
-    if(req.body.submit==="login")
-    {
-    //this is login
-        var newuser={};
-        newuser.fname=req.body.Fname;
-        newuser.lname=req.body.Lname;
-        await user.findOne({ Fname: newuser.fname })
-        .then(profile => 
-          {
-        if (!profile) 
-        {
-           res.send("User not exist");
-        } 
-        else
-         {
-           if (profile.Lname == newuser.lname) 
-           {
-              res.send("User authenticated");
-           } 
-           else 
-           {
-              res.send("User Unauthorized Access");
-           }
-         }
-    })
-        .catch(err => {
-          console.log("Error is ", err.message);
-        });
 
+
+app.get("/logout",function(req,res){
+  req.session.destroy(function(err){
+    if(err){
+      res.negotiate(err);
     }
-    else
-    {
-        //this is for signup
-        var mydata=new user(req.body);
-        mydata.save().then(()=>
-        {
-            res.send("item savd to db");
-        })
-        .catch(err=>{
-            res.status(400).send("unable to save to db");
-            });
-    }*/
-    
-    var session=require("express-session");
-    app.set('trust proxy', 1);
-    app.use(session({
-      secret: 'keyboard cat',
-      resave: true,
-      proxy: true,
-      saveUninitialized: true,
-      cookie: { secure: true }
-    }));
+    else{
+      res.redirect("/");
+    }
+  });
+});
+/* session example
+app.get("/session_count",function(req,res){
+
+  if(req.session.count){
+    req.session.count++;
+    res.send("count"+req.session.count);
+  }
+  else{
+    req.session.count=1;
+    res.send("welcome first time count"+req.session.count);
+  }
+});*/
 
 
-    app.get("/sert",function(req,res){
-      console.log(req.query);
-      res.render("sert");
-        });
-      
-        app.post("/sert",urlencodedParser,function(req,res){
-      console.log(req.body);
-      res.send("recv");
-        });
+app.get("/session_count",function(req,res){
+
+  if(req.session.count){
+    req.session.count++;
+    res.send("count"+req.session.count);
+  }
+  else{
+    req.session.count=1;
+    res.send("welcome first time count"+req.session.count);
+  }
+  });
 
 cont(app);
 app.listen(3008);

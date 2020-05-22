@@ -9,19 +9,20 @@
 <body style="background-color: aqua;">
     <h1 class="Login-Details">Register Your Details </h1></br></br></br></br></br>
 
-    <form class="form" id="f" method="POST" action="/logger">
-        <b>Email</b> :&emsp;&emsp;&emsp; <input name="email" value="" type="text" placeholder="xyz@gmail.com"
+    <form class="form" id="f" method="POST" action="/signup">
+        <b>Email<b> :&emsp;&emsp;&emsp; <input class="insertdata" name="email" value="" type="email" placeholder="xyz@gmail.com"
             required></br></br>
 
-        <b>Password</b>:&emsp;&emsp;<input type="password" id="as" placeholder="password" name="password" value=""
+        <b>Password</b>:&emsp;&emsp;<input class="insertdata" type="password" id="as" placeholder="password" name="password" value=""
             required></br></br>
         &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;<button class="signup-button" value="login" name="submittype"
             type="submit">Login</button></br></br>
-        Are you a new user?&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;<button class="signup-button" value="signup" name="submittype"
-            type="submit">Signup</button></br></br>
-
+       
     </form>
-
+    <form  method="POST" action="/signup"> <b>Are You A New User?</b> &emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;<button class="signup-button" value="signup" name="submttype"
+        type="submit">Signup</button></br></br>
+</form>
+   
 
 </body>
 
