@@ -5,14 +5,63 @@ var session = require("express-session");
 var urlencodedParser = bodyparser.urlencoded({ extended: true });
 
 var x = function (app) {
-  app.get("/settings",function(req,res){
+  app.post("/updateProfile",urlencodedParser,function(req,res){
+    var data=req.body;
+    user.updateOne(
+      {"email":req.session.email},data,{upsert:true},function(err,result){
+        if(err){
+          res.send(err);
+        }
+        else{
+          var path=req.path;
+          res.redirect("/profile");
+         /* res.render("profile",{path,data});*/
+        }
+
+      });
+     
+ /*user.find.upsert({"email":req.session.email},{$set:
+  {
+   "Fname":data.Fname,
+ "Lname":data.Lname,
+ "state":data.state,
+ "Country":data.country,
+ "mobilenumber":data.mobilenumber,
+ "birthdate":data.birthdate,
+ "pass":data.pass
+}
+},{upsery:true})*/
+/*
+.save()
+.then(() => {
+  res.send("item updated to db");
+})
+.catch((err) => {
+  res.status(400).send("unable to save to db");
+});*/
+   
+  });
+  app.get("/editProfile",urlencodedParser,function(req,res){
+console.log(req.session.email);
+var path=req.path;
+user.find({email:req.session.email},function(err,data1){
+
+  console.log("gstcsts"+data1[0].Fname);
+  var data=data1[0];
+res.render("profile",{data,path});
+  
+});
+
+  });
+  app.get("/profile",function(req,res){
     if(req.session.email){
 /*res.send(req.session.email);*/
 
 user.find({email:req.session.email},function(err,data1){
 
   console.log("gstcsts"+data1[0].Fname);
-res.render("profile",{data:data1[0]});
+  var path=req.path;
+res.render("profile",{data:data1[0],path});
   
 });}
 else{
@@ -46,7 +95,7 @@ res.redirect("/");
         var mydata2 = data2;
         console.log(mydata2);
 
-        addprodmain.find({ category: "wome" }, function (err, data3) {
+        addprodmain.find({ category: "women" }, function (err, data3) {
           var mydata3 = data3;
           console.log(mydata3);
           res.render("ShopByCategory", {
@@ -85,9 +134,6 @@ res.redirect("/");
     res.render("getimg", { data: req.body });
   });
 
-  /*app.post("/sert",urlencodedParser,function(req,res){
-    console.log(req.body);
-  });*/
   app.post("/search", urlencodedParser, function (req, res) {
     res.render("search", { data: req.body });
   });
@@ -103,10 +149,7 @@ res.redirect("/");
       res.redirect("/");
     }
   });
-  /*app.get("/logger",function(req,res){
-    
-    res.render("logger");
-});*/
+
   app.post("/signup", urlencodedParser, function (req, res) {
     req.session.email = req.body.email;
     req.session.password = req.body.password;
@@ -139,7 +182,7 @@ res.redirect("/");
       } else {
         var path = req.path;
 
-        res.render("sert", { path, data });
+        res.render("signup-form", { path, data });
       }
     });
   });
@@ -168,7 +211,7 @@ res.redirect("/");
           });
       } else {
         var path = req.path;
-        res.render("sert", { path, mydata });
+        res.render("signup-form", { path, mydata });
       }
     });
 
