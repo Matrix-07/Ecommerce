@@ -1,42 +1,51 @@
 <html>
 
 <head>
-  <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 
 <body>
-  <button onclick="HideOrShowMenu()" class="button2">
-    <div class="SingleBarInMenu"></div>
-    <div class="SingleBarInMenu"></div>
-    <div class="SingleBarInMenu"></div>
-</button> <br><br>     
-  <div id="MenuBar">
-    <a  href="profile"><button  class="button1">profile</button> <br><br></a>  
-      <a  href="main"><button  class="button1">home</button> <br><br></a>  
-      <a  href="ShopByCategory"> <button  class="button1">Shop by Category</button><br><br> </a>   
-      <a href="orders"> <button  class="button1">Your Orders</button> <br>  <br></a>  
-      <a href="cart"> <button  class="button1"> cart</button>   <br><br></a>
-      <a href="Wishlist"><button  class="button1"> wish list</button>  <br> <br></a> 
-      <a href="Settings"><button  class="button1">Settings</button>   <br> <br></a>
-      <a href="contact"><button  class="button1">contact</button>  <br>  <br></a>
-      <a href="logout"><button  class="button1">Logout</button>  <br>  <br></a>       
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()" >
+    &#9776;
+   </span> 
+  
+   <div id="MySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a  href="profile">Profile </a>  
+      <a  href="main">Home</a>  
+      <a  href="ShopByCategory"> ShopByCategory </a>   
+      <a href="orders"> Your Orders</a>  
+      <a href="cart"> Cart</a>
+      <a href="Wishlist">Wish List</a> 
+      <a href="Settings">Settings</a>
+      <a href="contact">Contact</a>
+      <a href="logout">Logout</a>       
    </div>
 
   <div id="CategoryList">
 
 
-<a href="#" category-type="women" onclick="ShowItemsByCategory('women')"> <button class="button1">WOMEN'S FASHION</button></a> </br></br>
-    <a href="#" category-type="mens" onclick="ShowItemsByCategory('mens')"><button class="button1"> MEN'S FASHION</button></a> <br><br>
-    <a href="#" category-type="kids" onclick="ShowItemsByCategory('kids')"><button class="button1">KID'S FASHION</button></a> <br><br>
-    <a href="#" category-type="electronics" onclick="ShowItemsByCategory('electronics')"><button class="button1">ELECTRONICS</button></a> <br><br>
-    <a href="#" category-type="mobile-computers" onclick="ShowItemsByCategory('mobile computers')"><button class="button1" > MOBILES COMPUTERS</button></a>
-    <br><br>
-    <a href="#" category-type="house utensils" onclick="ShowItemsByCategory('house utensils')"><button class="button1">HOUSEHOLD SUPPLIES</button></a>
-    <br><br>
-    <a href="#" category-type="books" onclick="ShowItemsByCategory('books')"><button class="button1">BOOKS</button></a> <br><br>
-    <a href="#" category-type="movie-tickets" onclick="ShowItemsByCategory('movie tickets')"><button class="button1">MOVIE TICKETS</button></a> <br><br>
-    <a href="#" category-type="recharge" onclick="ShowItemsByCategory('recharge')"><button class="button1"> RECHARGE</button></a> <br><br>
+    <a href="#" category-type="women" onclick="ShowItemsByCategory('women')"> <button class="button1">WOMEN'S
+        FASHION</button></a> 
+    <a href="#" category-type="mens" onclick="ShowItemsByCategory('mens')"><button class="button1"> MEN'S
+        FASHION</button></a> 
+    <a href="#" category-type="kids" onclick="ShowItemsByCategory('kids')"><button class="button1">KID'S
+        FASHION</button></a> 
+    <a href="#" category-type="electronics" onclick="ShowItemsByCategory('electronics')"><button
+        class="button1">ELECTRONICS</button></a> 
+    <a href="#" category-type="mobilelaptop" onclick="ShowItemsByCategory('mobilelaptop')"><button
+        class="button1"> MOBILES COMPUTERS</button></a>
+   
+    <a href="#" category-type="utensils" onclick="ShowItemsByCategory('utensils')"><button
+        class="button1">HOUSEHOLD SUPPLIES</button></a>
+    
+    <a href="#" category-type="books" onclick="ShowItemsByCategory('books')"><button class="button1">BOOKS</button></a>
+    
+    <a href="#" category-type="movie-tickets" onclick="ShowItemsByCategory('movie tickets')"><button
+        class="button1">MOVIE TICKETS</button></a> 
+    <a href="#" category-type="recharge" onclick="ShowItemsByCategory('recharge')"><button class="button1">
+        RECHARGE</button></a> 
 
   </div>
 
@@ -76,7 +85,63 @@
   </div> <br><br><br><br><br><br><br><br>
 
   <div class="ShowItems" id="women">
-    <% data_wome.forEach((test)=>{%>
+    <% data_women.forEach((test)=>{%>
+    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+    </a>
+    <%});%></br>
+  </div>
+  <div class="ShowItems" id="electronics">
+    <% data_electronics.forEach((test)=>{%>
+    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+    </a>
+    <%});%></br>
+  </div>
+  <div class="ShowItems" id="books">
+    <% data_books.forEach((test)=>{%>
+    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+    </a>
+    <%});%></br>
+  </div>
+  <div class="ShowItems" id="mobilelaptop">
+    <% data_mobilelaptop.forEach((test)=>{%>
+    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
+      <div class="card">
+
+        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
+        <div class="container">
+          <p><%=test.description%> </p>
+          <p>price :<%=test.price%></p>
+        </div>
+      </div>
+    </a>
+    <%});%></br>
+  </div>
+  <div class="ShowItems" id="utensils">
+    <% data_utensils.forEach((test)=>{%>
     <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
       <div class="card">
 
@@ -93,16 +158,23 @@
 
 
   <script>
-    var button2=document.getElementsByClassName("button2");
-    button2[0].style.top="20px";
-    var menubar=document.getElementById("MenuBar");
-    menubar.style.top="70px";
+      function openNav()
+       {
+          document.getElementById("MySidenav").style.width = "250px";
+        }
+
+      function closeNav() 
+      {
+         document.getElementById("MySidenav").style.width = "0";
+      }    
+
+
     var AllAttributesofTag = document.getElementById("CategoryList").getElementsByTagName("a");
     /*alert(AllAttributesofTag[1].getElementsByTagName("button")[0].innerHTML);*/
     var ArrayOfCategoryType = [];
     for (var i = 0; i < AllAttributesofTag.length; i++) {
       ArrayOfCategoryType.push(AllAttributesofTag[i].getAttribute("category-type"));
-      AllAttributesofTag[i].getElementsByTagName("button")[0].style.width="100px";
+      AllAttributesofTag[i].getElementsByTagName("button")[0].style.width = "150px";
     }
 
 
@@ -142,19 +214,8 @@
             }
         }*/
     }
-    function HideOrShowMenu() {
-            var ToggleMenuBar = document.getElementById("MenuBar").style;
-            /*var b=document.getElementById("pd");*/
-            
-            if (ToggleMenuBar.display == "none"  || ToggleMenuBar.display==='') {
-                ToggleMenuBar.display = "block";
-                ToggleMenuBar.zIndex="1";
-            } else {
-                ToggleMenuBar.display = "none";
-            }
-            
-            }
     
+
   </script>
 </body>
 
