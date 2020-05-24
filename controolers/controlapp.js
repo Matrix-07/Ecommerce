@@ -70,6 +70,9 @@ res.redirect("/");
 
 
   });
+  app.get("/orders",function(req,res){
+    res.render("orders");
+  })
   app.set("trust proxy", 1);
   app.use(
     session({
@@ -86,22 +89,42 @@ res.redirect("/");
   });
 
   app.get("/ShopByCategory", function (req, res) {
+    
     console.log("emailshopby"+req.session.email);
     addprodmain.find({ category: "men" }, function (err, data1) {
       var mydata1 = data1;
-      console.log(mydata1);
+    
 
       addprodmain.find({ category: "kids" }, function (err, data2) {
         var mydata2 = data2;
-        console.log(mydata2);
+       
 
         addprodmain.find({ category: "women" }, function (err, data3) {
           var mydata3 = data3;
-          console.log(mydata3);
+          
+        addprodmain.find({ category: "electronics" }, function (err, data4) {
+          var mydata4 = data4;
+          
+        addprodmain.find({ category: "mobilelaptop" }, function (err, data5) {
+          var mydata5 = data5;
+
+          addprodmain.find({ category: "books" }, function (err, data6) {
+            var mydata6 = data6;
+            addprodmain.find({ category: "utensils" }, function (err, data7) {
+              var mydata7 = data7;
+         
           res.render("ShopByCategory", {
             data_men: mydata1,
             data_kids: mydata2,
-            data_wome: mydata3,
+            data_women: mydata3,
+            data_electronics:mydata4,
+            data_mobilelaptop:mydata5,
+            data_books:mydata6,
+            data_utensils:mydata7
+          });
+        });
+      });
+        });
           });
         });
       });
