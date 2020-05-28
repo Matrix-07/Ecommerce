@@ -1,39 +1,274 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="assets/style.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+  p {
+    font-weight: bolder;
+    font-size: 30px;
 
-<body style="color:aqua">
-  <p> Title: <%=test[0].title%></p>
-  <p> Desrciption: <%=test[0].description%> </p>
-  <p> Category:<%=test[0].category%></p>
+  }
 
-  <div class="card">
+  .agg {
+    background-color:skyblue;
+    height: 650px;
 
-    <img src="/assets/images/<%=test[0].imgpath%>" style="width:100%">
-    <div class="container">
+    display: flex;
+    position: relative;
+    top: 30px;
 
-      <p>price :<%=test[0].price%></p>
+  }
+
+  .aggy {
+    background-color: brown;
+    height: 650px;
+
+    display: flex;
+    position: relative;
+    top: 30px;
+
+  }
+
+  .gy {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .gf {
+    display: flex;
+    height: 600px;
+    width: 400px;
+    margin: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .gf1 {
+    display: flex;
+    height: 600px;
+    width: 400px;
+    position: relative;
+    top: 40px;
+    text-align: center;
+    align-items: center;
+    margin: 20px;
+    display: block;
+  }
+
+  .ddd {
+    position: relative;
+    left: 110px;
+
+  }
+</style>
+
+<body>
+
+  <div class="asd">
+
+    <div class="examp">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+        &#9776;
+      </span>
+    </div>
+
+    <div>
+      <form method="POST" action="/search">
+        <input type="text" class="SearchItems" placeholder="Search.." name="search">
+        <button class="Home-search-button" type="submit"><i class="fa fa-search  fa-2x"></i></button>
+
+
+      </form>
+    </div>
+    <div class="cart1">
+      <ion-icon onclick="fe2()" name="cart-outline"></ion-icon>
+    </div>
+    <div class="profile">
 
     </div>
+
   </div>
 
+  <div id="MySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="profile">Profile </a>
+    <a href="main">Home</a>
+    <a href="ShopByCategory"> ShopByCategory </a>
+    <a href="orders"> Your Orders</a>
+    <a href="cart"> Cart</a>
+    <a href="Wishlist">Wish List</a>
+    <a href="Settings">Settings</a>
+    <a href="contact">Contact</a>
+    <a href="logout">Logout</a>
+  </div>
+  <div class="gy">
+    <div class="agg">
+
+      <div class="gf">
+        <p> <%=test[0].title%></p>
+        <div class="card">
+
+          <img src="/assets/images/<%=test[0].imgpath%>">
+          <div class="container">
+            <div style="display: block;" id="0">
+              <ion-icon class="star" onclick="fe(1,0)" name="star-outline"></ion-icon>
+              <ion-icon class="star" onclick="fe(2,0)" name="star-outline"></ion-icon>
+              <ion-icon class="star" onclick="fe(3,0)" name="star-outline"></ion-icon>
+              <ion-icon class="star" onclick="fe(4,0)" name="star-outline"></ion-icon>
+              <ion-icon class="star" onclick="fe(5,0)" name="star-outline"></ion-icon>
+            </div></br></br>
+            <div icons_id="0" class="ivf"></br></br>
+              <ion-icon class="heart" onclick="fe1(0)" name="heart-outline"></ion-icon>&nbsp;&emsp;</br>
+
+            </div>
+          </div>
+          </br>
+
+
+        </div>
+
+      </div>
+
+      <div class="gf1">
+        <p> Category:<%=test[0].category%></p>
+        <p>price :<%=test[0].price%></p>
+        <p>Offers available:</p>
+        <p> Desrciption: <%=test[0].description%> </p>
+
+      </div>
+      <div class="gf1">
+        <b>QTY:</b> <input class="quantity-input" type="" id="qtyin" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="qty('Increase-Quantity')" class="Increase-Button">+</button>&nbsp;&emsp;
+
+        <button onclick="qty('Decrease-Quantiy')" class="Decrease-Button">-</button></br><br></br>
+        <b> Total price:</b>
+        <p id="totalvalue" value="<%=test[0].price%>"> <%=test[0].price%></p></br>
+
+        <div class="ddd">
+          <form method="GET" action="/recievedsamp?imgpath=<%=test[0].imgpath%>">
+            <input style="display: none;" name="imgpath" value="<%=test[0].imgpath%>">
+            <button id="subval" class="button1" onclick="totalval()" type="submit" name="b" value="2">
+              CHECKOUT
+            </button></form>
+          <a href="addtocart?imgpath=<%=test[0].imgpath%>"> <button class="button1" type="submit" name="imgpath" value="<%=test[0].imgpath%>">
+              Add To Cart
+          </a>
+        </div>
+
+      </div>
+
+
+    </div>
   </br>
-  </br>
-  <b>QUANTITY:</b> <input class="quantity-input" type="" id="qtyin" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
-  <button onclick="qty('Increase-Quantity')" class="Increase-Button">+</button>&nbsp;&emsp;
+</br><b style="color:blueviolet;background-color: rgb(66, 46, 49);">RELATED ITEMS</b>
+    <div class="agg" style="height: fit-content;">
 
-  <button onclick="qty('Decrease-Quantiy')" class="Decrease-Button">-</button></br><br></br>
-  <b> Total price:</b>
-  <p id="totalvalue" value="<%=test[0].price%>"> <%=test[0].price%></p></br>
+      <div class="bigb">
 
-  <form method="GET" action="/recievedsamp">
-    <button id="subval" onclick="totalval()" type="submit" name="b" value="2">
-      Checkout
-    </button></form>
+        <%for(var i=0;i<5;i++){%>
+        <a href="temporders?imgpath=<%=test2[i].imgpath%>&value=<%=test2[i].price%>&cat=<%=test2[i].category%>">
+          <div class="card">
+            <img img_id='<%=i%>' src="/assets/images/<%=test2[i].imgpath%>" alt="image of jauger" />
+            <div class="container">
+              <div id='<%=i%>'>
+                <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+                <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+                <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+                <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+                <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
 
+                <h2 style="color:blue"><%=test2[i].title%></h2>
+                <p style="color:blue;font-size: 25px;">Price:<%=test2[i].price%></p>
+              </div>
+            </div>
+
+            <div icons_id='<%=i%>' class="ivf">
+              <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+              <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+            </div>
+          </div>
+        </a>
+        <%}%>
+   </div> 
+  
+ 
+  </div>
+  
+  
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <script>
+
+
+    function fe(d, id) {
+
+      var temp = document.getElementById(id).getElementsByClassName("star");
+      let val_star = d;
+
+      for (let i = 1; i < 6; i++) {
+
+        if (i == d) {
+          if (temp[i - 1].name == "star") {
+
+            temp[i - 1].name = "star-outline";
+
+          }
+          else {
+            temp[i - 1].name = "star";
+            val_star = d;
+
+          }
+        }
+        else {
+
+          temp[i - 1].name = "star-outline";
+
+        }
+
+      }
+      for (let j = 1; j <= val_star; j++) {
+        temp[j - 1].name = "star";
+      }
+      alert(val_star);
+    }
+
+
+    function fe1(d) {
+
+
+      let rt = document.querySelectorAll("[icons_id]")[d];
+      let temp1 = rt.getElementsByClassName("heart");
+      temp1[0].name = "heart";
+
+      let ty = document.querySelectorAll("[img_id]")[d].src;
+
+      let a = ty.length;
+      let k = ty.lastIndexOf("/");
+      let b = ty.substring(k + 1, a);
+
+      rt.getElementsByTagName("a")[0].href = "wishlist?wishlist=" + b;
+
+
+
+    }
+
+    function fe2(d) {
+
+      let rt = document.querySelectorAll("[icons_id]")[d];
+      let temp1 = rt.getElementsByClassName("cart");
+      temp1[0].name = "cart";
+
+      let ty = document.querySelectorAll("[img_id]")[d].src;
+
+      let a = ty.length;
+      let k = ty.lastIndexOf("/");
+      let b = ty.substring(k + 1, a);
+
+      rt.getElementsByTagName("a")[0].href = "wishlist?wishlist=" + b;
+
+    }
     function qty(a) {
 
       var b = document.getElementById("qtyin");
@@ -61,6 +296,13 @@
       var x = document.getElementById("totalvalue");
       var y = x.getAttribute("value");
       document.getElementById("subval").value = y * b.value;
+    }
+    function openNav() {
+      document.getElementById("MySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("MySidenav").style.width = "0";
     }
   </script>
 

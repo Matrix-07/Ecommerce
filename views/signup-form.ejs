@@ -38,31 +38,34 @@
        %>
 
        
-    <form class="modified" method="POST" action="/insert" onsubmit="return checkpass()">
+    <form  method="POST" action="/insert" onsubmit="return checkpass()">
 
        
         
-    
-<b>First Name :&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="insertdata" name="Fname" value="<%=Fname%>" placeholder="shiv" required></br></br>
-<b>Last Name</b>:&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;<input type="text" class="insertdata" name="Lname" value="<%=Lname%>" placeholder="dhoni" required></br></br>
-<b>Email</b>    :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  <input name="email" class="insertdata" value="<%=email%>" type="email" placeholder="xyz@gmail.com" required>&emsp;<b style="color:red" ><%=message%></b></br></br>
-<b>Birth Date:</b>:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="date" class="date-width" placeholder="birthday" name="birthdate" value="<%=birthdate%>" required></br></br>
-<b>Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" class="insertdata" placeholder="password" id="firstpassword" name="pass" value="" required></br></br>
-<b>Confirm Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" class="insertdata" id="confirmpassword" name="confirmpass" value="" required></br></br>
-<b>Country:</b>:&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input style="width:150px" id="co" class="input-border insertdata" type="text"  placeholder="Country" name="Country" value="<%=country%>" required><select class="insertdata country-border" onclick="checkcountry()" name="countries" id="country-selection"   size="1">
-    <option value="country">India</option>
-    <option name="country">USA</option>
-    <option name="country">Germany</option>
-    <option name="country">Italy</option>
-    <option name="country">spain</option>
-    <option name="country">nepal</option>
-</select>
+    <div class="modified">
 
+        <b>First Name :&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="insertdata" name="Fname" value="<%=Fname%>" placeholder="shiv" required></br></br>
+            <b>Last Name</b>:&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;<input type="text" class="insertdata" name="Lname" value="<%=Lname%>" placeholder="dhoni" required></br></br>
+            <b>Email</b>    :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  <input name="email" class="insertdata" value="<%=email%>" type="email" placeholder="xyz@gmail.com" required>&emsp;<b style="color:red" ><%=message%></b></br></br>
+            <b>Birth Date:</b>:&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="date" class="date-width" placeholder="birthday" name="birthdate" value="<%=birthdate%>" required></br></br>
+            <b>Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" class="insertdata" placeholder="password" id="firstpassword" name="pass" value="" required></br></br>
+            <b>Confirm Password</b>:&emsp;&emsp;&emsp;&emsp;&emsp;<input type="password" placeholder="password" class="insertdata" id="confirmpassword" name="confirmpass" value="" required></br></br>
+            <b>Country:</b>:&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input style="width:150px" id="co" class="input-border insertdata" type="text"  placeholder="Country" name="Country" value="<%=country%>" required><select class="insertdata country-border" onclick="checkcountry()" name="countries" id="country-selection"   size="1">
+                <option value="country">India</option>
+                <option name="country">USA</option>
+                <option name="country">Germany</option>
+                <option name="country">Italy</option>
+                <option name="country">spain</option>
+                <option name="country">nepal</option>
+            </select>
+            
+            
+            <p></p>
+            <b>State:</b>:&nbsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="insertdata" placeholder="State" name="state" value="<%=state%>" required></br></br>
+            <b>Mobile Number:</b>:&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;<input type="tel" placeholder="Mobilenumber" class="insertdata" name="mobilenumber" value="<%=contact%>" required></br></br>
+            <button  class="signup-button" name="Firstuser" value="signedup"  type="submit">SIGN UP</button></br></br>
+    </div>
 
-<p></p>
-<b>State:</b>:&nbsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" class="insertdata" placeholder="State" name="state" value="<%=state%>" required></br></br>
-<b>Mobile Number:</b>:&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;<input type="tel" placeholder="Mobilenumber" class="insertdata" name="mobilenumber" value="<%=contact%>" required></br></br>
-<button  class="signup-button" name="Firstuser" value="signedup"  type="submit">SIGN UP</button></br></br>
 
 
 
