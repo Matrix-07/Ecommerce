@@ -32,19 +32,20 @@ input {
   height:30px;
 }
 
+
 .modified {
   display:flex;
   justify-content: center;
   align-items: center;
   position: relative;
   color: blue;
-  height: 550px;
+  height: 850px;
   width: 1200px;
-  
+  border:2px solid #111;
   padding: 5px;
   margin: 30%;
   bottom: 300px;
-  font-size:x-large;
+ 
 }
 .Login-Details{
   position: relative;
@@ -61,37 +62,22 @@ body {
   background-size: 80%;
   left: 30px;
 }
-.card {
-  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-  height: 226px;
- max-width: 175px;
-  text-align: center;
-  color: aqua;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 2px;
-  margin: 3px;
-  overflow:scroll;
-  
-}
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
-}
-/*
-img {
-  border-radius: 5px 5px 0 0;
-  min-height: 160px;
-  
-}*/
 
+
+img {
+
+  height: 250px;
+  width: 240px;
+  
+  margin: 0 0 0 5px;
+  }
 .button1 {
 height:50px;
   display: block;
   margin: 1px;
-  z-index: 1;
+  
   margin:20px 0 0 0;
-  width:4000px;
+  width:140px;
   text-decoration:none;
   background-color: #111;
   color:white;
@@ -157,13 +143,15 @@ height: 100%;
   height: 100px;
   width: 100px;
   border: 2px solid salmon;
+  position: relative;
+  left:500px;
   border-radius: 50%;
   background: url("/assets/jauger.jpg");
 }
 
 .main-body {
-  background-color: #2a293e;
-  height: 2100px;
+  /*background-color: #2a293e;*/
+
   /*background: url("/assets/sa.png");*/
 }
 
@@ -174,18 +162,21 @@ height: 100%;
   left: 200px;
 }*/
 .searchItems{
-  position: absolute;
-  top: 50px;;
+  
+  position: relative;
   height: 40px;
   width: 550px;
-  left: 500px;
+  left: 300px;
 }
 .Home-search-button {
-  position: absolute;
-  top:50px;
+  
+position: relative;
+top:4px;
+background-color:yellowgreen;
+cursor: pointer;
   height: 40px;
   width: 80px;
-  left: 1050px;
+  left: 295px;
 }
 
 .FlexForCard {
@@ -217,6 +208,16 @@ height: 100%;
 #mens {
   display: none;
 }
+.dd{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid green;
+  height: 1300px;
+  width:2000px;
+  left:120px;
+  
+}
 #women {
   display: none;
 }
@@ -233,12 +234,6 @@ height: 100%;
 }
 #electronics{
   display: none;
-}
-
-
-
-body {
-  background-color: #2a293e;
 }
 
 .ShowItems{
@@ -289,8 +284,113 @@ b{
 #CategoryList{
 position: relative;
 top:20px;
+width:40px;
 
 }
 a{
   text-decoration: none;
+}
+
+.star {
+  position: relative;
+  left: 0px;
+  font-size: 25px;
+  color: blue
+
+}
+
+.heart {
+  font-size: 35px;
+  color: red;
+  float:right;
+}
+
+.cart {
+  position: relative;
+  font-size: 35px;
+  color: blue;
+  float:right;
+  
+}
+
+.cart1 {
+  position: relative;
+  font-size:45px;
+  left: 400px;
+  cursor: pointer;
+
+}
+
+.card {
+ 
+  height: 400px;
+  width: 250px;
+  position: relative;
+  top:10px;
+  left:40px;
+  padding: 2px;
+  margin: 25px;
+  cursor: pointer;
+  border-color:  black;
+  display:inline-grid;
+}
+
+.container {
+  margin: 5px;
+  position: relative;
+  top: 5px;
+  
+}
+
+
+
+.ivf {
+  position: relative;
+  bottom: 65px;
+  float: right;
+  right: 15px;
+ 
+}
+
+ .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(122, 7, 230, 0.2);
+  transform: scale(1.1);
+}
+
+.bigb {
+  position: relative;
+  background-color: pink;
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  
+ 
+ 
+}
+
+.asd {
+  display: flex;
+  align-items: center;
+  height:110px;
+  background-color: aqua;
+  min-width: 200px;
+  overflow: hidden;
+  flex-wrap: wrap;
+
+
+}
+
+.frt {
+  bottom: 55px;
+
+  left: 1400px;
+}
+.z{
+  
+  text-align:center;
+  display: block;
+}
+.p{
+  background-color: lightseagreen;
 }

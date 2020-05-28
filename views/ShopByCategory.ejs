@@ -5,7 +5,7 @@
 </head>
 
 
-<body>
+<body style="background-color:aqua">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()" >
     &#9776;
    </span> 
@@ -27,7 +27,7 @@
 
 
     <a href="#" category-type="women" onclick="ShowItemsByCategory('women')"> <button class="button1">WOMEN'S
-        FASHION</button></a> 
+        FASHION</button></a> <br>
     <a href="#" category-type="mens" onclick="ShowItemsByCategory('mens')"><button class="button1"> MEN'S
         FASHION</button></a> 
     <a href="#" category-type="kids" onclick="ShowItemsByCategory('kids')"><button class="button1">KID'S
@@ -48,116 +48,286 @@
         RECHARGE</button></a> 
 
   </div>
-
-
+<div>
+  
   <div class="ShowItems" id="kids">
 
-    <% data_kids.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
+    <div class="bigb">
+      <%for(var i=0;i<10;i++){%>
+        <a href="temporders?imgpath=<%=data_kids[i].imgpath%>&value=<%=data_kids[i].price%>&cat=<%=data_kids[i].category%>">
+        <div class="card">
+          <img img_id='<%=i%>' src="/assets/images/<%=data_kids[i].imgpath%>" alt="image of jauger" />
+     <div class="container">
+       <div id='<%=i%>'>
+         <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
 
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
+         <h2 style="color:blue"><%=data_kids[i].title%></h2>
+         <p style="color:blue;font-size: 25px;">Price:<%=data_kids[i].price%></p>
+       </div>
+     </div>
 
-    </a>
-    <%});%> </br>
-  </div>
+     <div icons_id='<%=i%>' class="ivf">
+       <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+       <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+     </div>
+    </div></a>
+        <%}%>
+</div>
+</div>
 
 
+<div>
   <div class="ShowItems" id="mens">
 
-    <% data_men.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
+    <div class="bigb">
+      <%for(var i=10;i<20;i++){%>
+        <a href="temporders?imgpath=<%=data_men[i-10].imgpath%>&value=<%=data_men[i-10].price%>&cat=<%=data_men[i-10].category%>">
+        <div class="card">
+          <img img_id='<%=i%>' src="/assets/images/<%=data_men[i-10].imgpath%>" alt="image of jauger" />
+     <div class="container">
+       <div id='<%=i%>'>
+         <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
 
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
-    </a>
-    <%});%>
-  </div> <br><br><br><br><br><br><br><br>
+         <h2 style="color:blue"><%=data_men[i-10].title%></h2>
+         <p style="color:blue;font-size: 25px;">Price:<%=data_men[i-10].price%></p>
+       </div>
+     </div>
 
+     <div icons_id='<%=i%>' class="ivf">
+       <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+       <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+     </div>
+    </div></a>
+        <%}%>
+  </div> 
+</div>
+<div>
   <div class="ShowItems" id="women">
-    <% data_women.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
+    <div class="bigb">
+      <%for(var i=20;i<30;i++){%>
+        <a href="temporders?imgpath=<%=data_women[i-20].imgpath%>&value=<%=data_women[i-20].price%>&cat=<%=data_women[i-20].category%>">
+        <div class="card">
+          <img img_id='<%=i%>' src="/assets/images/<%=data_women[i-20].imgpath%>" alt="image of jauger" />
+     <div class="container">
+       <div id='<%=i%>'>
+         <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
 
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
-    </a>
-    <%});%></br>
+         <h2 style="color:blue"><%=data_women[i-20].title%></h2>
+         <p style="color:blue;font-size: 25px;">Price:<%=data_women[i-20].price%></p>
+       </div>
+     </div>
+
+     <div icons_id='<%=i%>' class="ivf">
+       <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+       <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+     </div>
+    </div></a>
+        <%}%>
   </div>
+
+</div>
+ <div>
   <div class="ShowItems" id="electronics">
-    <% data_electronics.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
+    <div class="bigb">
+      <%for(var i=30;i<36;i++){%>
+        <a href="temporders?imgpath=<%=data_electronics[i-30].imgpath%>&value=<%=data_electronics[i-30].price%>&cat=<%=data_electronics[i-30].category%>">
+        <div class="card">
+          <img img_id='<%=i%>' src="/assets/images/<%=data_electronics[i-30].imgpath%>" alt="image of jauger" />
+     <div class="container">
+       <div id='<%=i%>'>
+         <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
 
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
-    </a>
-    <%});%></br>
+         <h2 style="color:blue"><%=data_electronics[i-30].title%></h2>
+         <p style="color:blue;font-size: 25px;">Price:<%=data_electronics[i-30].price%></p>
+       </div>
+     </div>
+
+     <div icons_id='<%=i%>' class="ivf">
+       <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+       <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+     </div>
+    </div></a>
+        <%}%>
   </div>
+ </div>
+
+  <div>
+
+    
   <div class="ShowItems" id="books">
-    <% data_books.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
+    <div class="bigb">
+      <%for(var i=40;i<45;i++){%>
+        <a href="temporders?imgpath=<%=data_books[i-40].imgpath%>&value=<%=data_books[i-40].price%>&cat=<%=data_books[i-40].category%>">
+        <div class="card">
+          <img img_id='<%=i%>' src="/assets/images/<%=data_books[i-40].imgpath%>" alt="image of jauger" />
+     <div class="container">
+       <div id='<%=i%>'>
+         <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+         <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
 
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
-    </a>
-    <%});%></br>
+         <h2 style="color:blue"><%=data_books[i-40].title%></h2>
+         <p style="color:blue;font-size: 25px;">Price:<%=data_books[i-40].price%></p>
+       </div>
+     </div>
+
+     <div icons_id='<%=i%>' class="ivf">
+       <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+       <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+     </div>
+    </div></a>
+        <%}%>
   </div>
-  <div class="ShowItems" id="mobilelaptop">
-    <% data_mobilelaptop.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
-
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
-    </a>
-    <%});%></br>
   </div>
-  <div class="ShowItems" id="utensils">
-    <% data_utensils.forEach((test)=>{%>
-    <a href="/temporders?imgpath=<%=test.imgpath%>&value=<%=test.price%>">
-      <div class="card">
+  <div>
 
-        <img src="/assets/images/<%=test.imgpath%>" style="width:100%">
-        <div class="container">
-          <p><%=test.description%> </p>
-          <p>price :<%=test.price%></p>
-        </div>
-      </div>
-    </a>
-    <%});%></br>
+    <div class="ShowItems" id="mobilelaptop">
+      <div class="bigb">
+        <%for(var i=50;i<60;i++){%>
+          <a href="temporders?imgpath=<%=data_mobilelaptop[i-50].imgpath%>&value=<%=data_mobilelaptop[i-50].price%>&cat=<%=data_mobilelaptop[i-50].category%>">
+          <div class="card">
+            <img img_id='<%=i%>' src="/assets/images/<%=data_mobilelaptop[i-50].imgpath%>" alt="image of jauger" />
+       <div class="container">
+         <div id='<%=i%>'>
+           <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
+  
+           <h2 style="color:blue"><%=data_mobilelaptop[i-50].title%></h2>
+           <p style="color:blue;font-size: 25px;">Price:<%=data_mobilelaptop[i-50].price%></p>
+         </div>
+       </div>
+  
+       <div icons_id='<%=i%>' class="ivf">
+         <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+         <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+       </div>
+      </div></a>
+          <%}%>
+    </div>
+    </div>
+    <div class="ShowItems" id="utensils">
+      <div class="bigb">
+        <%for(var i=60;i<70;i++){%>
+          <a href="temporders?imgpath=<%=data_utensils[i-60].imgpath%>&value=<%=data_utensils[i-60].price%>&cat=<%=data_utensils[i-60].category%>">
+          <div class="card">
+            <img img_id='<%=i%>' src="/assets/images/<%=data_utensils[i-60].imgpath%>" alt="image of jauger" />
+       <div class="container">
+         <div id='<%=i%>'>
+           <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
+  
+           <h2 style="color:blue"><%=data_utensils[i-60].title%></h2>
+           <p style="color:blue;font-size: 25px;">Price:<%=data_utensils[i-60].price%></p>
+         </div>
+       </div>
+  
+       <div icons_id='<%=i%>' class="ivf">
+         <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+         <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+       </div>
+      </div></a>
+          <%}%>
+    </div>
   </div>
+ 
 
-
-
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <script>
+
+
+    
+function fe(d, id) {
+     
+     var temp = document.getElementById(id).getElementsByClassName("star");
+     let val_star = d;
+
+     for (let i = 1; i < 6; i++) {
+
+       if (i == d) {
+         if (temp[i - 1].name == "star") {
+
+           temp[i - 1].name = "star-outline";
+
+         }
+         else {
+           temp[i - 1].name = "star";
+           val_star = d;
+
+         }
+       }
+       else {
+
+         temp[i - 1].name = "star-outline";
+
+       }
+
+     }
+     for (let j = 1; j <= val_star; j++) {
+       temp[j - 1].name = "star";
+     }
+     alert(val_star);
+   }
+
+
+   function fe1(d) {
+
+
+     let rt = document.querySelectorAll("[icons_id]")[d];
+     let temp1 = rt.getElementsByClassName("heart");
+     temp1[0].name = "heart";
+
+     let ty = document.querySelectorAll("[img_id]")[d].src;
+
+     let a = ty.length;
+     let k = ty.lastIndexOf("/");
+     let b = ty.substring(k + 1, a);
+
+     rt.getElementsByTagName("a")[0].href = "wishlist?wishlist=" + b;
+
+
+
+   }
+
+   function fe2(d) {
+
+     let rt = document.querySelectorAll("[icons_id]")[d];
+     let temp1 = rt.getElementsByClassName("cart");
+     temp1[0].name = "cart";
+
+     let ty = document.querySelectorAll("[img_id]")[d].src;
+
+     let a = ty.length;
+     let k = ty.lastIndexOf("/");
+     let b = ty.substring(k + 1, a);
+
+     rt.getElementsByTagName("a")[0].href = "wishlist?wishlist=" + b;
+
+   }
+  
       function openNav()
        {
           document.getElementById("MySidenav").style.width = "250px";
@@ -174,18 +344,18 @@
     var ArrayOfCategoryType = [];
     for (var i = 0; i < AllAttributesofTag.length; i++) {
       ArrayOfCategoryType.push(AllAttributesofTag[i].getAttribute("category-type"));
-      AllAttributesofTag[i].getElementsByTagName("button")[0].style.width = "150px";
+      AllAttributesofTag[i].getElementsByTagName("button")[0].style.width = "140px";
     }
 
-
+    var CheckCategoryVisibility;
     function ShowItemsByCategory(MatchCategory) {
       for (var j = 0; j < ArrayOfCategoryType.length; j++) {
         if (ArrayOfCategoryType[j] == MatchCategory) {
-          var CheckCategoryVisibility = document.getElementById(MatchCategory).style;
+          CheckCategoryVisibility = document.getElementById(MatchCategory).style;
 
 
           if (CheckCategoryVisibility.display == "none" || CheckCategoryVisibility.display === '') {
-            CheckCategoryVisibility.display = "block";
+            CheckCategoryVisibility.display = "inline";
             AllAttributesofTag[j].style.color = "red";
             AllAttributesofTag[j].style.fontFamily = "Arial";
             AllAttributesofTag[j].style.fontWeight = "bold";

@@ -71,7 +71,10 @@ res.redirect("/");
 
   });
   app.get("/orders",function(req,res){
-    res.render("orders");
+  
+res.render("orders");
+
+    
   })
   app.set("trust proxy", 1);
   app.use(
@@ -162,13 +165,32 @@ res.redirect("/");
   });
   app.get("/main", function (req, res) {
     if (req.session.email) {
-      addprodmain.find({}, function (err, data) {
-        console.log(data);
-        var k = { clickHandler: "adding1();" };
+      addprodmain.find({ category: "men" }, function (err, data1) {
+        var mydata1 = data1;
+      
+  
+        addprodmain.find({ category: "kids" }, function (err, data2) {
+          var mydata2 = data2;
+         
+  
+          addprodmain.find({ category: "women" }, function (err, data3) {
+            var mydata3 = data3;
+            
+          addprodmain.find({ category: "electronics" }, function (err, data4) {
+            var mydata4 = data4;
+        
 
-        res.render("main", { test: data });
+        res.render("main", {    data_men: mydata1,
+          data_kids: mydata2,
+          data_women: mydata3,
+          data_electronics:mydata4 });
       });
-    } else {
+    });
+    });
+  });
+    } 
+    else 
+    {
       res.redirect("/");
     }
   });
@@ -213,6 +235,25 @@ res.redirect("/");
     res.render("profile");
   });
 
+  app.get("/wishlist",function(req,res){
+    var data=req.query;
+    console.log(data);
+    if(data.wishlist){
+
+ res.render("wishlist",{data});
+    }
+    else{
+      req.params.wishlist="1";
+      
+      res.render("addtocart",{data:req.params.wishlist});
+    }
+    
+    });
+    
+    app.get("/addtocart",function(req,res){
+        res.render("addtocart");
+    })
+    
   app.post("/insert", urlencodedParser, function (req, res) {
     var mydata = new user(req.body);
     console.log(mydata);
@@ -291,8 +332,12 @@ res.redirect("/");
     addprodmain.find(
       { imgpath: req.query.imgpath, price: req.query.value },
       function (err, data) {
-        console.log(data);
-        res.render("temporders", { test: data });
+        addprodmain.find({category:req.query.cat},function(req,data1){
+          var test2=data1;
+          console.log(data);
+          res.render("temporders", { test: data,test2 });
+        })
+       
       }
     );
     console.log(req.query);

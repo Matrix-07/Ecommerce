@@ -1,323 +1,276 @@
 <html>
 
 <head>
+  <meta charset="utf=8">
+  </meta>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="assets/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="assets/style.css" rel="stylesheet" type="text/css" />
 </head>
 
+
+
 <body>
+
+
+
+
+  <div class="asd">
+
+    <div class="examp">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+        &#9776;
+      </span>
+    </div>
+
+    <div>
+      <form method="POST" action="/search">
+        <input type="text" class="SearchItems" placeholder="Search.." name="search">
+        <button class="Home-search-button" type="submit"><i class="fa fa-search  fa-2x"></i></button>
+
+
+      </form>
+    </div>
+    <div class="cart1">
+      <ion-icon onclick="fe2()" name="cart-outline"></ion-icon>
+    </div>
+    <div class="profile">
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div id="MySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="profile">Profile </a>
+    <a href="main">Home</a>
+    <a href="ShopByCategory"> ShopByCategory </a>
+    <a href="orders"> Your Orders</a>
+    <a href="cart"> Cart</a>
+    <a href="Wishlist">Wish List</a>
+    <a href="Settings">Settings</a>
+    <a href="contact">Contact</a>
+    <a href="logout">Logout</a>
+  </div>
   
-        <div class="main-body">
-           <div class="profile">
-
-            </div>
-            <h1 style="color:aqua">Hi Shivu </h1>
-            <p  style="color:aqua" id="time1"><b style="font-size: 34px;">Time</b></p>
-            <form   method ="POST" action="/search">
-
-              <div class="SearchItems"> 
-                <input type="text" class="SearchItems" placeholder="Search.." name="search">
-                <button  class="Home-search-button" type="submit"><i class="fa fa-search  fa-2x"></i></button>
-            </div>
- 
-             </form>
-             <span style="font-size:30px;cursor:pointer" onclick="openNav()" >
-              &#9776;
-             </span> <br><br>           
-            <div id="ShowOffers">
-                
-                    <h1 class="OfferHeadLine">Offers Today</h1></br></br>
-                   <div class="FlexForCard">
-                      <a href="#">
-                        <div class="card">
-        
-                        <img src="/assets/images/<%=test[0].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[0].description%> </p>
-                          <p>price :<%=test[0].price%></p> 
-                          </div>
-                      </div> 
-                    </a>
-                      <a href="#"> <div class="card">
-        
-                        <img src="/assets/images/<%=test[1].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[1].description%> </p>
-                          <p>price :<%=test[1].price%></p> 
-                          </div>
-                      </div> </a>
-                     
-                      <a href="#">  <div class="card">
-        
-                        <img src="/assets/images/<%=test[2].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[2].description%> </p>
-                          <p>price :<%=test[2].price%></p> 
-                          </div>
-                      </div></a>
-                     
-                      <a href="#"><div class="card">
-        
-                        <img src="/assets/images/<%=test[3].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[3].description%> </p>
-                          <p>price :<%=test[3].price%></p> 
-                          </div>
-                      </div> </a>
-                      <a href="#"><div class="card">
-        
-                        <img src="/assets/images/<%=test[4].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[4].description%> </p>
-                          <p>price :<%=test[4].price%></p> 
-                          </div>
-                      </div></a>
-                       <a href="#"><div class="card">
-        
-                        <img src="/assets/images/<%=test[5].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[5].description%> </p>
-                          <p>price :<%=test[5].price%></p> 
-                          </div>
-                      </div> 
-                    </div><br><br></a>
-                    <h1 class="OfferHeadLine">Women's Wear</h1><br>
-                    
-                      <div  class="FlexForCard"><a href="#"> 
-                        <div class="card">
-          
-                          <img src="/assets/images/<%=test[6].imgpath%>" style="width:100%">
-                          <div class="container">
-                            <p><%=test[6].description%> </p>
-                            <p>price :<%=test[6].price%></p> 
-                            </div>
-                        </div> </a>
-                   <a href="#"> <div class="card">
-        
-                    <img src="/assets/images/<%=test[7].imgpath%>" style="width:100%">
-                    <div class="container">
-                      <p><%=test[7].description%> </p>
-                      <p>price :<%=test[7].price%></p> 
-                      </div>
-                  </div> </a>
-                     <a href="#"><div class="card">
-        
-                      <img src="/assets/images/<%=test[8].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[8].description%> </p>
-                        <p>price :<%=test[8].price%></p> 
-                        </div>
-                    </div> </a>
-                      <a href="#">  <div class="card">
-        
-                        <img src="/assets/images/<%=test[9].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[9].description%> </p>
-                          <p>price :<%=test[9].price%></p> 
-                          </div>
-                      </div> </a>
-                    <a href="#"><div class="card">
-        
-                      <img src="/assets/images/<%=test[10].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[10].description%> </p>
-                        <p>price :<%=test[10].price%></p> 
-                        </div>
-                    </div></a>
-                       <a href="#"><div class="card">
-        
-                        <img src="/assets/images/<%=test[11].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[11].description%> </p>
-                          <p>price :<%=test[11].price%></p> 
-                          </div>
-                      </div> 
-                    </div><br><br></a>
-                      
-
-                    <h1 class="OfferHeadLine">Mens Wear</h1><br>
-                    <div class="FlexForCard">
-                      <a href="#"> <div class="card">
-        
-                        <img src="/assets/images/<%=test[12].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[12].description%> </p>
-                          <p>price :<%=test[12].price%></p> 
-                          </div>
-                      </div> </a>
-                     <a href="#"><div class="card">
-        
-                      <img src="/assets/images/<%=test[13].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[13].description%> </p>
-                        <p>price :<%=test[13].price%></p> 
-                        </div>
-                    </div> </a>
-                    <a href="#"> <div class="card">
-        
-                      <img src="/assets/images/<%=test[14].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[14].description%> </p>
-                        <p>price :<%=test[14].price%></p> 
-                        </div>
-                    </div> </a>
-                      
-                     <a href="#"> <div class="card">
-        
-                      <img src="/assets/images/<%=test[15].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[15].description%> </p>
-                        <p>price :<%=test[15].price%></p> 
-                        </div>
-                    </div></a>
-                      <a href="#"><div class="card">
-        
-                        <img src="/assets/images/<%=test[16].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[16].description%> </p>
-                          <p>price :<%=test[16].price%></p> 
-                          </div>
-                      </div> </a>
-                      <a href="#">  <div class="card">
-        
-                        <img src="/assets/images/<%=test[17].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[17].description%> </p>
-                          <p>price :<%=test[17].price%></p> 
-                          </div>
-                      </div> 
-                    </div><br><br> </a>
-                      
-                        
-
-                     <h1 class="OfferHeadLine">Items Recommended for You</h1><br> 
-                    <div class="FlexForCard">
-                      <a href="#"><div class="card">
-                       
-        
-                        <img src="/assets/images/<%=test[18].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[18].description%> </p>
-                          <p>price :<%=test[18].price%></p> 
-                          </div>
-                      </div> </a> 
-                      <a href="#">  <div class="card">
-        
-                        <img src="/assets/images/<%=test[19].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[19].description%> </p>
-                          <p>price :<%=test[19].price%></p> 
-                          </div>
-                      </div> </a>
-                      <a href="#"><div class="card">
-        
-                        <img src="/assets/images/<%=test[20].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[20].description%> </p>
-                          <p>price :<%=test[20].price%></p> 
-                          </div>
-                      </div></a>
-                     <a href="#"> <div class="card">
-        
-                      <img src="/assets/images/<%=test[21].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[21].description%> </p>
-                        <p>price :<%=test[21].price%></p> 
-                        </div>
-                    </div> </a>
-                       
-                    <a href="#"><div class="card">
-        
-                      <img src="/assets/images/<%=test[22].imgpath%>" style="width:100%">
-                      <div class="container">
-                        <p><%=test[22].description%> </p>
-                        <p>price :<%=test[22].price%></p> 
-                        </div>
-                    </div> </a>
-                     <a href="#"> 
-                      <div class="card">
-        
-                        <img src="/assets/images/<%=test[23].imgpath%>" style="width:100%">
-                        <div class="container">
-                          <p><%=test[23].description%> </p>
-                          <p>price :<%=test[23].price%></p> 
-                          </div>
-                      </div> 
-                    </div><br></a>
-                     
-            </div>
-            
-            <div id="MySidenav" class="sidenav">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-              <a  href="profile">Profile </a>  
-                <a  href="main">Home</a>  
-                <a  href="ShopByCategory"> ShopByCategory </a>   
-                <a href="orders"> Your Orders</a>  
-                <a href="cart"> Cart</a>
-                <a href="Wishlist">Wish List</a> 
-                <a href="Settings">Settings</a>
-                <a href="contact">Contact</a>
-                <a href="logout">Logout</a>       
-             </div>
-            
-             
-        </div>
-    
-</body>
-<script>
-           
-            var GetDate=new Date();
-            var time1=document.getElementById('time1');
-            time1.innerHTML=GetDate;
-
-                
-   /*         
-function adding1(f){
+  <div class="p">
+    <h1 class="z">BEST DEALS</h1>
+    <div id="mens1">
+      <div class="bigb">
+        <%for(var i=0;i<4;i++){%>
+          <div class="card">
+            <img img_id=<%=i%> src="/assets/images/<%=data_men[i].imgpath%>" alt="image of jauger"/>
+       <div class="container">
+         <div id=<%=i%>>
+           <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
   
-            var block_to_insert ;
-     var container_block ;
+           <h2 style="color:blue"><%=data_men[i].title%></h2>
+           <p style="color:blue;font-size: 25px;"><%=data_men[i].price%></p>
+         </div>
+       </div>
+  
+       <div icons_id=<%=i%> class="ivf">
+         <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+         <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+       </div>
+      </div>
+          <%}%>
+    </div>
 
-   container_block = document.getElementsByClassName("FlexForCard");
-   
-       for(var i=0;i<container_block.length;i++){
-          for(var j=0;j<6;j++)
-           {
-               block_to_insert = document.createElement( 'div' );
-               block_to_insert.innerHTML =  `<a href=''><div class="card">
-                           <img src="/assets/jauger.jpg" alt="Avatar" style="width:100%">
-                           <div class="container">
-                           <p>best one </p>
-                           <p>100</p> 
-                           </div>
-                       </div></a>`;
-               container_block[i].append( block_to_insert );
-           }
-           }
+  </div>
+  <h1 class="z">BEST DEALS</h1>
+    <div id="kids1">
+      <div class="bigb">
+        <%for(var i=4;i<8;i++){%>
+          <div class="card">
+            <img img_id='<%=i%>' src="/assets/images/<%=data_kids[i-4].imgpath%>" alt="image of jauger" />
+       <div class="container">
+         <div id='<%=i%>'>
+           <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
+  
+           <h2 style="color:blue"><%=data_kids[i-4].title%></h2>
+           <p style="color:blue;font-size: 25px;">Price:<%=data_kids[i-4].price%></p>
+         </div>
+       </div>
+  
+       <div icons_id='<%=i%>' class="ivf">
+         <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+         <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+       </div>
+      </div>
+          <%}%>
+    </div>
+
+  </div>
+  <h1 class="z">BEST DEALS</h1>
+    <div id="womens1">
+      <div class="bigb">
+        <%for(var i=8;i<12;i++){%>
+          <div class="card">
+            <img img_id='<%=i%>' src="/assets/images/<%=data_women[i-8].imgpath%>" alt="image of jauger" />
+       <div class="container">
+         <div id='<%=i%>'>
+           <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
+  
+           <h2 style="color:blue"><%=data_women[i-8].title%></h2>
+           <p style="color:blue;font-size: 25px;">Price:<%=data_women[i-8].price%></p>
+         </div>
+       </div>
+  
+       <div icons_id='<%=i%>' class="ivf">
+         <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+         <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+       </div>
+      </div>
+          <%}%>
+    </div>
+
+  </div>
+  <h1 class="z">BEST DEALS</h1>
+    <div id="electronics1">
+      <div class="bigb">
+        <%for(var i=12;i<16;i++){%>
+          <div class="card">
+            <img img_id=i src="/assets/images/<%=data_electronics[i-12].imgpath%>" alt="image of jauger" />
+       <div class="container">
+         <div id='<%=i%>'>
+           <ion-icon class="star" onclick="fe(1,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(2,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(3,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(4,'<%=i%>')" name="star-outline"></ion-icon>
+           <ion-icon class="star" onclick="fe(5,'<%=i%>')" name="star-outline"></ion-icon>
+  
+           <h2 style="color:blue"><%=data_electronics[i-12].title%></h2>
+           <p style="color:blue;font-size: 25px;">Price:<%=data_electronics[i-12].price%></p>
+         </div>
+       </div>
+  
+       <div icons_id='<%=i%>' class="ivf">
+         <ion-icon class="heart" onclick="fe1('<%=i%>')" name="heart-outline"></ion-icon>&nbsp;&emsp;
+         <ion-icon class="cart" onclick="fe2('<%=i%>')" name="cart-outline"></ion-icon>
+       </div>
+      </div>
+          <%}%>
+    </div>
+
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script>
+
+
+    function fe(d, id) {
+     
+      var temp = document.getElementById(id).getElementsByClassName("star");
+      let val_star = d;
+
+      for (let i = 1; i < 6; i++) {
+
+        if (i == d) {
+          if (temp[i - 1].name == "star") {
+
+            temp[i - 1].name = "star-outline";
+
           }
-        
-  
-        adding1(f);
-        var x=document.getElementById("dert").innerHTML;
-       */
-       function openNav() {
-  document.getElementById("MySidenav").style.width = "250px";
-}
+          else {
+            temp[i - 1].name = "star";
+            val_star = d;
 
-function closeNav() {
-  document.getElementById("MySidenav").style.width = "0";
-}    
+          }
+        }
+        else {
+
+          temp[i - 1].name = "star-outline";
+
+        }
+
+      }
+      for (let j = 1; j <= val_star; j++) {
+        temp[j - 1].name = "star";
+      }
+      alert(val_star);
+    }
+
+
+    function fe1(d) {
+
+
+      let rt = document.querySelectorAll("[icons_id]")[d];
+      let temp1 = rt.getElementsByClassName("heart");
+      temp1[0].name = "heart";
+
+      let ty = document.querySelectorAll("[img_id]")[d].src;
+
+      let a = ty.length;
+      let k = ty.lastIndexOf("/");
+      let b = ty.substring(k + 1, a);
+
+      rt.getElementsByTagName("a")[0].href = "wishlist?wishlist=" + b;
+
+
+
+    }
+
+    function fe2(d) {
+
+      let rt = document.querySelectorAll("[icons_id]")[d];
+      let temp1 = rt.getElementsByClassName("cart");
+      temp1[0].name = "cart";
+
+      let ty = document.querySelectorAll("[img_id]")[d].src;
+
+      let a = ty.length;
+      let k = ty.lastIndexOf("/");
+      let b = ty.substring(k + 1, a);
+
+      rt.getElementsByTagName("a")[0].href = "wishlist?wishlist=" + b;
+
+    }
+    function openNav() {
+      document.getElementById("MySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("MySidenav").style.width = "0";
+    }
+    var GetDate = new Date();
+    var time1 = document.getElementById('time1');
+    time1.innerHTML = GetDate;
+
   </script>
 
-</html>
 
-<!-- function to disable button
-   function dis(){
-  const button = document.querySelector('button');
-  if( button.disabled == true){
-    alert("fr");
-  button.disabled = false;}
-  else{
-    alert("hey");
-    button.disabled = true;
-  }-->
+</body>
+
+</html>
